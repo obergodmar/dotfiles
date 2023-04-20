@@ -15,7 +15,7 @@ function rename_wezterm_title {
 }
 
 if [[ -n $SSH_CONNECTION ]]; then
-    export EDITOR='nvim'
+    export EDITOR='vim'
 else
     export EDITOR='nvim'
 fi
