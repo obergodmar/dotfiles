@@ -1,5 +1,5 @@
 local wezterm = require 'wezterm'
-
+local act = wezterm.action
 local config = {}
 
 if wezterm.config_builder then
@@ -23,5 +23,10 @@ wezterm.on("format-tab-title", function(tab)
     { Text = " " .. pane_title .. " " },
   }
 end)
+
+config.keys = {
+  { key = '{', mods = 'SHIFT|ALT', action = act.MoveTabRelative(-1) },
+  { key = '}', mods = 'SHIFT|ALT', action = act.MoveTabRelative(1) },
+}
 
 return config
