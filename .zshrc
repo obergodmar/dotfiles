@@ -20,8 +20,12 @@ else
     export EDITOR='nvim'
 fi
 
-alias up_hilbert="sudo wg-quick up hilbert"
+alias up_hilbert="down_avenoir; sudo wg-quick up hilbert"
 alias down_hilbert="sudo wg-quick down hilbert"
+
+alias up_avenoir="down_hilbert; sudo wg-quick up avenoir"
+alias down_avenoir="sudo wg-quick down avenoir"
+
 alias wezterm="flatpak run org.wezfurlong.wezterm"
 
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
