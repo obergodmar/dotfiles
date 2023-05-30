@@ -31,6 +31,61 @@ end
 
 config.color_scheme = 'Dracula'
 
+config.window_frame = {
+  font = config.font,
+  font_size = config.font_size,
+  inactive_titlebar_bg = '#353535',
+  active_titlebar_bg = '#282a36',
+  inactive_titlebar_fg = '#6272a4',
+  active_titlebar_fg = '#f8f8f2',
+  inactive_titlebar_border_bottom = '#6272a4',
+  active_titlebar_border_bottom = '#6272a4',
+  button_fg = '#f8f8f2',
+  button_bg = '#282a36',
+  button_hover_fg = '#f8f8f2',
+  button_hover_bg = '#44475a',
+
+  border_left_width = '0.25cell',
+  border_right_width = '0.25cell',
+  border_bottom_height = '0.2cell',
+  border_top_height = '0.2cell',
+  border_left_color = '#6272a4',
+  border_right_color = '#6272a4',
+  border_bottom_color = '#6272a4',
+  border_top_color = '#6272a4',
+}
+
+config.colors = {
+  tab_bar = {
+    background = '#282a36',
+    active_tab = {
+      bg_color = '#44475a',
+      fg_color = '#f8f8f2',
+      intensity = 'Bold',
+      italic = false,
+    },
+    inactive_tab = {
+      bg_color = '#282a36',
+      fg_color = '#6272a4',
+      italic = true,
+    },
+    inactive_tab_hover = {
+      bg_color = '#44475a',
+      fg_color = '#6272a4',
+      italic = true,
+    },
+    new_tab = {
+      bg_color = '#282a36',
+      fg_color = '#6272a4',
+    },
+    new_tab_hover = {
+      bg_color = '#44475a',
+      fg_color = '#6272a4',
+    },
+  },
+
+}
+
 wezterm.on("format-tab-title", function(tab)
   local pane_title = tab.active_pane.title
   local user_title = tab.active_pane.user_vars.panetitle
