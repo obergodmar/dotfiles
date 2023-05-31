@@ -83,7 +83,6 @@ config.colors = {
       fg_color = '#6272a4',
     },
   },
-
 }
 
 wezterm.on("format-tab-title", function(tab)
