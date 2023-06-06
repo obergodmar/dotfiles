@@ -18,7 +18,7 @@ end
 -- Configs for OSX only
 if wezterm.target_triple == 'x86_64-apple-darwin' or wezterm.target_triple == 'aarch64-apple-darwin' then
   config.font_size = 14
-  config.font = wezterm.font('Iosevka Nerd Font', { weight = 'Bold' })
+  config.font = wezterm.font { family = 'Iosevka Nerd Font', weight = 'Bold' }
 end
 
 -- Configs for Linux only
