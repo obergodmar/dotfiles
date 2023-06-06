@@ -61,18 +61,14 @@ config.colors = {
     active_tab = {
       bg_color = '#44475a',
       fg_color = '#f8f8f2',
-      intensity = 'Bold',
-      italic = false,
     },
     inactive_tab = {
       bg_color = '#282a36',
       fg_color = '#6272a4',
-      italic = true,
     },
     inactive_tab_hover = {
       bg_color = '#44475a',
       fg_color = '#6272a4',
-      italic = true,
     },
     new_tab = {
       bg_color = '#282a36',
