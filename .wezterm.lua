@@ -11,7 +11,7 @@ end
 if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
   config.default_prog = { 'pwsh.exe', '-WorkingDirectory', '~' }
   config.font_size = 12
-  config.font = wezterm.font('Iosevka Nerd Font', { weight = 'Bold' })
+  config.font = wezterm.font { family = 'Iosevka Nerd Font', weight = 'Bold' }
   config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
 end
 
