@@ -71,6 +71,13 @@ config.hide_mouse_cursor_when_typing = false
 config.underline_thickness = '2px'
 config.underline_position = '-6px'
 
+config.window_padding = {
+  left = 12,
+  right = 0,
+  top = 0,
+  bottom = 0,
+}
+
 config.window_frame = {
   font = config.font,
   font_size = config.font_size,
@@ -96,6 +103,7 @@ config.window_frame = {
 }
 
 config.colors = {
+  background = '#282a36',
   tab_bar = {
     background = '#282a36',
     active_tab = {
