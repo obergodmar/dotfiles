@@ -9,7 +9,6 @@ end
 
 -- Configs for Windows only
 if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
-  config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
   config.default_prog = { 'pwsh.exe', '-WorkingDirectory', '~' }
   config.font_size = 12
   config.font = wezterm.font { family = 'Iosevka Nerd Font', weight = 'Bold' }
@@ -23,7 +22,6 @@ end
 
 -- Configs for Linux only
 if wezterm.target_triple == 'x86_64-unknown-linux-gnu' then
-  config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
   config.font = wezterm.font { family = "Iosevka Nerd Font Mono", weight = "DemiBold" }
   config.font_size = 11
   config.term = 'wezterm'
@@ -32,6 +30,42 @@ end
 config.color_scheme = 'Dracula'
 config.use_fancy_tab_bar = false
 config.tab_max_width = 30
+config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
+config.tab_bar_style = {
+  window_hide = wezterm.format {
+    { Background = { Color = '#282a36' } },
+    { Foreground = { Color = '#f8f8f2' } },
+    { Text = " _ " },
+  },
+  window_hide_hover = wezterm.format {
+    { Attribute = { Underline = 'Single' } },
+    { Background = { Color = '#44475a' } },
+    { Foreground = { Color = '#f8f8f2' } },
+    { Text = " _ " }
+  },
+  window_maximize = wezterm.format {
+    { Background = { Color = '#282a36' } },
+    { Foreground = { Color = '#f8f8f2' } },
+    { Text = " [] " }
+  },
+  window_maximize_hover = wezterm.format {
+    { Attribute = { Underline = 'Single' } },
+    { Background = { Color = '#44475a' } },
+    { Foreground = { Color = '#f8f8f2' } },
+    { Text = " [] " },
+  },
+  window_close = wezterm.format {
+    { Background = { Color = '#282a36' } },
+    { Foreground = { Color = '#f8f8f2' } },
+    { Text = " X " }
+  },
+  window_close_hover = wezterm.format {
+    { Attribute = { Underline = 'Single' } },
+    { Background = { Color = '#44475a' } },
+    { Foreground = { Color = '#f8f8f2' } },
+    { Text = " X " }
+  },
+}
 config.show_tab_index_in_tab_bar = true
 config.hide_mouse_cursor_when_typing = false
 config.underline_thickness = '2px'
@@ -67,13 +101,11 @@ config.colors = {
     active_tab = {
       bg_color = '#44475a',
       fg_color = '#f8f8f2',
-      intensity = 'Bold',
       underline = 'Single'
     },
     inactive_tab = {
       bg_color = '#282a36',
       fg_color = '#6272a4',
-      intensity = 'Half',
       italic = true
     },
     inactive_tab_hover = {
@@ -82,11 +114,12 @@ config.colors = {
     },
     new_tab = {
       bg_color = '#282a36',
-      fg_color = '#6272a4',
+      fg_color = '#f8f8f2',
     },
     new_tab_hover = {
       bg_color = '#44475a',
-      fg_color = '#6272a4',
+      fg_color = '#f8f8f2',
+      underline = 'Single'
     },
   },
 }
