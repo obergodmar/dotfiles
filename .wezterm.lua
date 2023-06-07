@@ -94,7 +94,7 @@ config.colors = {
 wezterm.on("format-tab-title", function(tab)
   local tab_index = tab.tab_index + 1
   local tab_title = tab.active_pane.title
-  local user_title = tab.active_pane.user_vars.tabtitle
+  local user_title = tab.active_pane.user_vars.panetitle
 
   if user_title ~= nil and #user_title > 0 then
     tab_title = user_title
