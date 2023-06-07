@@ -11,7 +11,7 @@ source $ZSH/oh-my-zsh.sh
 setopt histignoredups
 
 function rename_wezterm_title {
-    echo "\x1b]1337;SetUserVar=panetitle=$(echo -n $1 | base64)\x07"
+    echo "\x1b]1337;SetUserVar=tabtitle=$(echo -n $1 | base64)\x07"
 }
 
 if [[ -n $SSH_CONNECTION ]]; then

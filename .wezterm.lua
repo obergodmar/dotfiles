@@ -9,10 +9,10 @@ end
 
 -- Configs for Windows only
 if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
+  config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
   config.default_prog = { 'pwsh.exe', '-WorkingDirectory', '~' }
   config.font_size = 12
   config.font = wezterm.font { family = 'Iosevka Nerd Font', weight = 'Bold' }
-  config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
 end
 
 -- Configs for OSX only
@@ -30,6 +30,12 @@ if wezterm.target_triple == 'x86_64-unknown-linux-gnu' then
 end
 
 config.color_scheme = 'Dracula'
+config.use_fancy_tab_bar = false
+config.tab_max_width = 30
+config.show_tab_index_in_tab_bar = true
+config.hide_mouse_cursor_when_typing = false
+config.underline_thickness = '2px'
+config.underline_position = '-6px'
 
 config.window_frame = {
   font = config.font,
@@ -47,8 +53,8 @@ config.window_frame = {
 
   border_left_width = '0.25cell',
   border_right_width = '0.25cell',
-  border_bottom_height = '0.2cell',
-  border_top_height = '0.2cell',
+  border_bottom_height = '0.1cell',
+  border_top_height = '0.1cell',
   border_left_color = '#6272a4',
   border_right_color = '#6272a4',
   border_bottom_color = '#6272a4',
@@ -61,10 +67,14 @@ config.colors = {
     active_tab = {
       bg_color = '#44475a',
       fg_color = '#f8f8f2',
+      intensity = 'Bold',
+      underline = 'Single'
     },
     inactive_tab = {
       bg_color = '#282a36',
       fg_color = '#6272a4',
+      intensity = 'Half',
+      italic = true
     },
     inactive_tab_hover = {
       bg_color = '#44475a',
@@ -82,15 +92,16 @@ config.colors = {
 }
 
 wezterm.on("format-tab-title", function(tab)
-  local pane_title = tab.active_pane.title
-  local user_title = tab.active_pane.user_vars.panetitle
+  local tab_index = tab.tab_index + 1
+  local tab_title = tab.active_pane.title
+  local user_title = tab.active_pane.user_vars.tabtitle
 
   if user_title ~= nil and #user_title > 0 then
-    pane_title = user_title
+    tab_title = user_title
   end
 
   return {
-    { Text = " " .. pane_title .. " " },
+    { Text = " " .. tab_index .. ": " .. tab_title .. " " },
   }
 end)
 
