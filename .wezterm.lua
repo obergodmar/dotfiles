@@ -71,6 +71,14 @@ config.hide_mouse_cursor_when_typing = false
 config.underline_thickness = '2px'
 config.underline_position = '-6px'
 
+config.window_background_image = "/home/obergodmar/.bg.jpg"
+config.window_background_image_hsb = {
+  brightness = 0.04,
+  hue = 1,
+  saturation = 1,
+}
+config.text_background_opacity = 0.8
+
 config.window_padding = {
   left = 12,
   right = 0,
