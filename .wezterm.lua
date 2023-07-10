@@ -22,9 +22,10 @@ end
 
 -- Configs for Linux only
 if wezterm.target_triple == 'x86_64-unknown-linux-gnu' then
-  config.font = wezterm.font { family = "Iosevka Nerd Font Mono", weight = "DemiBold" }
+  config.font = wezterm.font { family = "Iosevka Nerd Font", weight = "DemiBold" }
   config.font_size = 11
   config.term = 'wezterm'
+  config.front_end = "OpenGL"
 end
 
 config.color_scheme = 'Dracula'
