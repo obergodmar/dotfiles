@@ -16,7 +16,7 @@ end
 
 -- Configs for OSX only
 if wezterm.target_triple == "x86_64-apple-darwin" or wezterm.target_triple == "aarch64-apple-darwin" then
-  config.font_size = 14
+  config.font_size = 15
   config.font = wezterm.font({ family = "Iosevka Nerd Font", weight = "Bold" })
 end
 
@@ -100,7 +100,19 @@ config.window_frame = {
   border_top_color = "#16161D",
 }
 
+config.default_cursor_style = "SteadyBlock"
+
 config.colors = {
+  -- dark theme
+  cursor_bg = "#c8c093",
+  cursor_fg = "#192330",
+  cursor_border = "#c8c093",
+
+  -- light theme
+  -- cursor_fg = "#f2eccd",
+  -- cursor_bg = "#dc8a78",
+  -- cursor_border = "#dc8a78",
+  --
   background = "#16161D",
   tab_bar = {
     background = "#16161D",
