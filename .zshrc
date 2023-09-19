@@ -1,5 +1,3 @@
-export GOPATH=$HOME/.go
-
 export PATH=$HOME/bin:/usr/local/bin:~/.local/bin:$(go env GOPATH)/bin:$PATH
 export ZSH="$HOME/.oh-my-zsh"
 
