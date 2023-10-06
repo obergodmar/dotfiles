@@ -66,7 +66,7 @@ config.tab_bar_style = {
 }
 config.show_tab_index_in_tab_bar = true
 config.hide_mouse_cursor_when_typing = false
-config.underline_thickness = "2px"
+config.underline_thickness = "4px"
 config.underline_position = "-6px"
 
 config.window_padding = {
