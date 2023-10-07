@@ -7,11 +7,16 @@ if wezterm.config_builder then
   config = wezterm.config_builder()
 end
 
+config.underline_thickness = "4px"
+config.underline_position = "-6px"
+
 -- Configs for Windows only
 if wezterm.target_triple == "x86_64-pc-windows-msvc" then
   config.default_prog = { "pwsh.exe", "-WorkingDirectory", "~" }
   config.font_size = 12
   config.font = wezterm.font({ family = "Iosevka Nerd Font", weight = "Bold" })
+  config.underline_thickness = "2px"
+  config.underline_position = "-3px"
 end
 
 -- Configs for OSX only
@@ -66,8 +71,6 @@ config.tab_bar_style = {
 }
 config.show_tab_index_in_tab_bar = true
 config.hide_mouse_cursor_when_typing = false
-config.underline_thickness = "4px"
-config.underline_position = "-6px"
 
 config.window_padding = {
   left = 12,
