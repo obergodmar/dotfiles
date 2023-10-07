@@ -1,4 +1,4 @@
-Import-Module posh-git
+Import-Module posh-git
 Import-Module $env:ChocolateyInstall\helpers\chocolateyProfile.psm1
 
 function rename_wezterm_title($title) {
