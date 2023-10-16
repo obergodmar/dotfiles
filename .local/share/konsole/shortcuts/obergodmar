@@ -1,0 +1,11 @@
+<gui name="konsole" version="1">
+  <ActionProperties>
+    <Action name="new-tab" shortcut="Ctrl+Shift+T"/>
+    <Action name="options_show_menubar" shortcut="Ctrl+Shift+M"/>
+    <Action name="activate-menu" shortcut="Ctrl+M"/>
+    <Action name="split-view-left-right" shortcut="Ctrl+%"/>
+    <Action name="split-view-top-bottom" shortcut="Ctrl+&quot;"/>
+    <Action name="next-tab" shortcut="Ctrl+Tab"/>
+    <Action name="previous-tab" shortcut="Ctrl+Shift+Tab"/>
+  </ActionProperties>
+</gui>
