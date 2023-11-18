@@ -2,4 +2,4 @@ multigrid = true
 vsync = true
 maximized = true
 idle = true
-frame = "Full"
+frame = "full"
