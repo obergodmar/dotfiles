@@ -1,4 +1,5 @@
-Import-Module posh-git
+oh-my-posh init pwsh --config 'C:/Users/obergodmar/Code/dotfiles/obergodmar.omp.json' | Invoke-Expression
+
 Import-Module $env:ChocolateyInstall\helpers\chocolateyProfile.psm1
 
 function rename_wezterm_title($title) {
