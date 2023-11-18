@@ -13,7 +13,7 @@ config.font = wezterm.font({ family = "Iosevka Nerd Font", weight = "Bold" })
 
 -- Configs for Windows only
 if wezterm.target_triple == "x86_64-pc-windows-msvc" then
-  config.default_prog = { "pwsh.exe", "-WorkingDirectory", "~" }
+  config.default_prog = { "pwsh.exe", "-nologo", "-WorkingDirectory", "~" }
   config.font_size = 12
 end
 
