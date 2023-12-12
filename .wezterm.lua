@@ -19,7 +19,7 @@ end
 
 -- Configs for OSX only
 if wezterm.target_triple == "x86_64-apple-darwin" or wezterm.target_triple == "aarch64-apple-darwin" then
-  config.font_size = 15
+  config.font_size = 16
 end
 
 -- Configs for Linux only
