@@ -26,7 +26,7 @@ end
 if wezterm.target_triple == "x86_64-unknown-linux-gnu" then
   config.font_size = 12
   config.term = "wezterm"
-  config.front_end = "OpenGL"
+  config.enable_wayland = false
 end
 
 config.color_scheme = "Kanagawa (Gogh)"
