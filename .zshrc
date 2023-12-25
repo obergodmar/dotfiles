@@ -21,13 +21,5 @@ else
     export EDITOR='nvim'
 fi
 
-alias up_hilbert="down_avenoir; sudo wg-quick up hilbert"
-alias down_hilbert="sudo wg-quick down hilbert"
-
-alias up_avenoir="down_hilbert; sudo wg-quick up avenoir"
-alias down_avenoir="sudo wg-quick down avenoir"
-
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-
-[[ -s "/usr/bin/xset" ]] && /usr/bin/xset b off
