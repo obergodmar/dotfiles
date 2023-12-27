@@ -112,7 +112,7 @@ config.colors = {
   -- cursor_bg = "#dc8a78",
   -- cursor_border = "#dc8a78",
   --
-  background = "#16161D",
+  background = "#1F1F28",
   tab_bar = {
     background = "#16161D",
     active_tab = {
