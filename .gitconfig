@@ -32,10 +32,10 @@
   line-numbers-right-style      = green
 
 [delta "decorations"]
-  commit-decoration-style = blue box ul
-  file-style = blue ul
-  file-decoration-style = blue box
-  hunk-header-decoration-style = yellow box ul
+  commit-decoration-style = normal box ul
+  file-style = normal ul
+  file-decoration-style = normal box
+  hunk-header-decoration-style = normal box ul
 
 [merge]
   conflictstyle = diff3
