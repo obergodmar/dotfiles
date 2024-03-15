@@ -11,6 +11,8 @@ config.underline_thickness = "300%"
 config.underline_position = "200%"
 config.font = wezterm.font({ family = "Iosevka Nerd Font", weight = "Bold" })
 
+config.check_for_updates = false
+
 -- Configs for Windows only
 if wezterm.target_triple == "x86_64-pc-windows-msvc" then
   config.default_prog = { "pwsh.exe", "-nologo", "-WorkingDirectory", "~" }

@@ -10,7 +10,6 @@
   syntax-theme = Kanagawa
   features = decorations
   whitespace-error-style = 22 reverse
-  side-by-side = true
   line-numbers = true
   navigate = true    # use n and N to move between diff sections
   light = false
