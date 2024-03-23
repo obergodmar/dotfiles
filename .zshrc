@@ -23,14 +23,8 @@ source /usr/share/doc/fzf/examples/completion.zsh
 alias lg="lazygit"
 
 function rename_wezterm_title {
-  echo "\x1b]1337;SetUserVar=panetitle=$(echo -n $1 | base64)\x07"
+	echo "\x1b]1337;SetUserVar=panetitle=$(echo -n $1 | base64)\x07"
 }
-
-tmux-window-name() {
-	($TMUX_PLUGIN_MANAGER_PATH/tmux-window-name/scripts/rename_session_windows.py &)
-}
-
-add-zsh-hook chpwd tmux-window-name
 
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
