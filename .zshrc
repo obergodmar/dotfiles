@@ -27,6 +27,10 @@ elif [[ -f $HOME/.fzf.zsh ]]; then
 	source $HOME/.fzf.zsh
 fi
 
+if [[ -f $HOME/.aliases ]]; then
+	source $HOME/.aliases
+fi
+
 alias lg="lazygit"
 
 function rename_wezterm_title {
