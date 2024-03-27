@@ -17,8 +17,15 @@ source $ZSH/oh-my-zsh.sh
 setopt histignoredups
 setopt ignoreeof
 
-source /usr/share/doc/fzf/examples/key-bindings.zsh
-source /usr/share/doc/fzf/examples/completion.zsh
+if
+	[[ -f /usr/share/doc/fzf/examples/key-bindings.zsh ]] &&
+		[[ -f /usr/share/doc/fzf/examples/completion.zsh ]]
+then
+	source /usr/share/doc/fzf/examples/key-bindings.zsh
+	source /usr/share/doc/fzf/examples/completion.zsh
+elif [[ -f $HOME/.fzf.zsh ]]; then
+	source $HOME/.fzf.zsh
+fi
 
 alias lg="lazygit"
 
