@@ -1,9 +1,11 @@
 export ZSH="$HOME/.oh-my-zsh"
+export BUN_INSTALL="$HOME/.bun"
 
 path+=($HOME'/bin')
 path+=($HOME'/.local/bin')
 path+=('/usr/local/bin')
 path+=($HOME'/.local/share/bob/nvim-bin')
+path+=($BUN_INSTALL'/bin')
 
 export PATH
 
@@ -42,3 +44,5 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
 gvm use default >/dev/null
+
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
