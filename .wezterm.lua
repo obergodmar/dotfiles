@@ -28,7 +28,7 @@ end
 if wezterm.target_triple == "x86_64-unknown-linux-gnu" then
   config.font_size = 12
   config.term = "wezterm"
-  config.enable_wayland = false
+  config.enable_wayland = true
 end
 
 config.color_scheme = "Kanagawa (Gogh)"
