@@ -13,6 +13,12 @@ config.font = wezterm.font({ family = "Iosevka Nerd Font", weight = "Bold" })
 
 config.check_for_updates = false
 config.warn_about_missing_glyphs = false
+config.audible_bell = "Disabled"
+config.visual_bell = {
+  fade_in_duration_ms = 75,
+  fade_out_duration_ms = 75,
+  target = 'CursorColor',
+}
 
 -- Configs for Windows only
 if wezterm.target_triple == "x86_64-pc-windows-msvc" then
