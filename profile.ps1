@@ -19,3 +19,4 @@ function global:$name {
 Add-Alias Run-Eza 'eza --tree --level=1 --icons=always'
 Set-Alias -Name ls -Value Run-Eza
 Set-Alias -Name lg -Value lazygit
+Set-Alias -Name vim -Value nvim
