@@ -217,6 +217,46 @@
         "useAcrylic": false
       },
       {
+        "guid": "{17da3cac-b318-431e-8a3e-7fcdefe6d114}",
+        "name": "UCRT64 / MSYS2",
+        "commandline": "C:/tools/msys64/msys2_shell.cmd -defterm -here -no-start -ucrt64",
+        "startingDirectory": "C:/tools/msys64/home/%USERNAME%",
+        "icon": "C:/tools/msys64/ucrt64.ico",
+        "adjustIndistinguishableColors": "indexed",
+        "colorScheme": "Kanagawa",
+        "cursorShape": "filledBox",
+        "experimental.retroTerminalEffect": false,
+        "font": {
+          "face": "Iosevka Nerd Font",
+          "weight": "bold"
+        },
+        "hidden": false,
+        "intenseTextStyle": "all",
+        "padding": "0",
+        "scrollbarState": "hidden",
+        "useAcrylic": false
+      },
+      {
+        "guid": "{71160544-14d8-4194-af25-d05feeac7233}",
+        "name": "MSYS / MSYS2",
+        "commandline": "C:/tools/msys64/msys2_shell.cmd -defterm -here -no-start -msys",
+        "startingDirectory": "C:/tools/msys64/home/%USERNAME%",
+        "icon": "C:/tools/msys64/msys2.ico",
+        "adjustIndistinguishableColors": "indexed",
+        "colorScheme": "Kanagawa",
+        "cursorShape": "filledBox",
+        "experimental.retroTerminalEffect": false,
+        "font": {
+          "face": "Iosevka Nerd Font",
+          "weight": "bold"
+        },
+        "hidden": false,
+        "intenseTextStyle": "all",
+        "padding": "0",
+        "scrollbarState": "hidden",
+        "useAcrylic": false
+      },
+      {
         "colorScheme": "Kanagawa",
         "font": {
           "face": "Iosevka Nerd Font",
