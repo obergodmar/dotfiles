@@ -44,7 +44,9 @@ function rename_wezterm_title {
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
-[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
-gvm use default >/dev/null
+if [[ -s "$HOME/.gvm/scripts/gvm" ]]; then
+	source "$HOME/.gvm/scripts/gvm"
+	gvm use default >/dev/null
+fi
 
 [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
