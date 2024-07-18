@@ -1,11 +1,13 @@
 export ZSH="$HOME/.oh-my-zsh"
 export BUN_INSTALL="$HOME/.bun"
+export CARGO_HOME="$HOME/.cargo"
 
 path+=($HOME'/bin')
 path+=($HOME'/.local/bin')
 path+=('/usr/local/bin')
 path+=($HOME'/.local/share/bob/nvim-bin')
 path+=($BUN_INSTALL'/bin')
+path+=($HOME'/.cargo/bin')
 
 export PATH
 
