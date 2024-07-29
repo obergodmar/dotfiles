@@ -38,9 +38,14 @@ fi
 alias lg="lazygit"
 alias ls="eza --tree --level=1 --icons=always"
 alias vim="nvim"
+alias tmux="tmux -2"
 
 function rename_wezterm_title {
 	echo "\x1b]1337;SetUserVar=panetitle=$(echo -n $1 | base64)\x07"
+}
+
+function change_wezterm_colorscheme {
+	echo "\033]1337;SetUserVar=colorscheme=$(echo -n "update" | base64)\007"
 }
 
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
