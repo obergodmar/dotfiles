@@ -7,6 +7,42 @@ if wezterm.config_builder then
   config = wezterm.config_builder()
 end
 
+config.term = "wezterm"
+config.color_schemes = {
+  ["kanagawa-wave"] = {
+    background = "#1f1f28",
+    foreground = "#dcd7ba",
+
+    cursor_bg = "#c8c093",
+    cursor_fg = "#c8c093",
+    cursor_border = "#c8c093",
+
+    selection_fg = "#c8c093",
+    selection_bg = "#2d4f67",
+
+    ansi = { "#090618", "#c34043", "#76946a", "#c0a36e", "#7e9cd8", "#957fb8", "#6a9589", "#c8c093" },
+    brights = { "#727169", "#e82424", "#98bb6c", "#e6c384", "#7fb4ca", "#938aa9", "#7aa89f", "#dcd7ba" },
+    indexed = { [16] = "#ffa066", [17] = "#ff5d62" },
+  },
+
+  ["kanagawa-lotus"] = {
+    background = "#f2ecbc",
+    foreground = "#545464",
+
+    cursor_bg = "#43436c",
+    cursor_fg = "#f2ecbc",
+
+    selection_bg = "#c9cbd1",
+    selection_fg = "#43436c",
+
+    ansi = { "#1F1F28", "#c84053", "#6f894e", "#77713f", "#4d699b", "#b35b79", "#597b75", "#545464" },
+
+    brights = { "#8a8980", "#d7474b", "#6e915f", "#836f4a", "#6693bf", "#624c83", "#5e857a", "#43436c" },
+
+    indexed = { [16] = "#cc6d00", [17] = "#e82424" },
+  },
+}
+
 config.underline_thickness = "300%"
 config.underline_position = "200%"
 config.font = wezterm.font({ family = "Iosevka Nerd Font", weight = "Bold" })
@@ -17,7 +53,7 @@ config.audible_bell = "Disabled"
 config.visual_bell = {
   fade_in_duration_ms = 75,
   fade_out_duration_ms = 75,
-  target = 'CursorColor',
+  target = "CursorColor",
 }
 
 -- Configs for Windows only
@@ -38,7 +74,7 @@ if wezterm.target_triple == "x86_64-unknown-linux-gnu" then
   config.enable_wayland = true
 end
 
-config.color_scheme = "Kanagawa (Gogh)"
+config.color_scheme = "kanagawa-wave"
 config.use_fancy_tab_bar = false
 config.tab_max_width = 30
 config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
@@ -111,17 +147,6 @@ config.window_frame = {
 config.default_cursor_style = "SteadyBlock"
 
 config.colors = {
-  -- dark theme
-  cursor_bg = "#c8c093",
-  cursor_fg = "#192330",
-  cursor_border = "#c8c093",
-
-  -- light theme
-  -- cursor_fg = "#f2eccd",
-  -- cursor_bg = "#dc8a78",
-  -- cursor_border = "#dc8a78",
-  --
-  background = "#1F1F28",
   tab_bar = {
     background = "#16161D",
     active_tab = {
@@ -161,6 +186,19 @@ wezterm.on("format-tab-title", function(tab)
   return {
     { Text = " " .. tab_index .. ": " .. tab_title .. " " },
   }
+end)
+
+wezterm.on("user-var-changed", function(window, _, name, value)
+  local overrides = window:get_config_overrides() or {}
+  if name == "colorscheme" and value == "update" then
+    if not overrides.color_scheme or overrides.color_scheme == "kanagawa-wave" then
+      overrides.color_scheme = "kanagawa-lotus"
+    else
+      overrides.color_scheme = "kanagawa-wave"
+    end
+  end
+
+  window:set_config_overrides(overrides)
 end)
 
 config.keys = {
