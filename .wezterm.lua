@@ -7,6 +7,7 @@ if wezterm.config_builder then
   config = wezterm.config_builder()
 end
 
+config.term = "wezterm"
 config.color_schemes = {
   ["kanagawa-wave"] = {
     background = "#1f1f28",
@@ -69,7 +70,8 @@ end
 -- Configs for Linux only
 if wezterm.target_triple == "x86_64-unknown-linux-gnu" then
   config.font_size = 12
-  config.enable_wayland = true
+  -- config.term = "wezterm"
+  config.enable_wayland = false
 end
 
 config.color_scheme = "kanagawa-wave"
