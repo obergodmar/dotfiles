@@ -7,14 +7,13 @@ if wezterm.config_builder then
   config = wezterm.config_builder()
 end
 
-config.term = "wezterm"
 config.color_schemes = {
   ["kanagawa-wave"] = {
     background = "#1f1f28",
     foreground = "#dcd7ba",
 
     cursor_bg = "#c8c093",
-    cursor_fg = "#c8c093",
+    cursor_fg = "#1f1f28",
     cursor_border = "#c8c093",
 
     selection_fg = "#c8c093",
@@ -70,7 +69,6 @@ end
 -- Configs for Linux only
 if wezterm.target_triple == "x86_64-unknown-linux-gnu" then
   config.font_size = 12
-  -- config.term = "wezterm"
   config.enable_wayland = true
 end
 
