@@ -11,6 +11,10 @@ path+=($HOME'/.cargo/bin')
 
 export PATH
 
+if [ -f "$HOME/.zshrc_overrides" ]; then
+	source "$HOME/.zshrc_overrides"
+fi
+
 ZSH_THEME="obergodmar"
 ZSH_DISABLE_COMPFIX=true
 
