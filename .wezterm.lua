@@ -77,39 +77,39 @@ end
 config.color_scheme = "kanagawa-wave"
 config.use_fancy_tab_bar = false
 config.tab_max_width = 30
-config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
-config.tab_bar_style = {
-  window_hide = wezterm.format({
-    { Background = { Color = "#16161D" } },
-    { Foreground = { Color = "#727169" } },
-    { Text = " _ " },
-  }),
-  window_hide_hover = wezterm.format({
-    { Background = { Color = "#2A2A37" } },
-    { Foreground = { Color = "#DCD7BA" } },
-    { Text = " _ " },
-  }),
-  window_maximize = wezterm.format({
-    { Background = { Color = "#16161D" } },
-    { Foreground = { Color = "#727169" } },
-    { Text = " [] " },
-  }),
-  window_maximize_hover = wezterm.format({
-    { Background = { Color = "#2A2A37" } },
-    { Foreground = { Color = "#DCD7BA" } },
-    { Text = " [] " },
-  }),
-  window_close = wezterm.format({
-    { Background = { Color = "#16161D" } },
-    { Foreground = { Color = "#727169" } },
-    { Text = " X " },
-  }),
-  window_close_hover = wezterm.format({
-    { Background = { Color = "#2A2A37" } },
-    { Foreground = { Color = "#DCD7BA" } },
-    { Text = " X " },
-  }),
-}
+-- config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
+-- config.tab_bar_style = {
+--   window_hide = wezterm.format({
+--     { Background = { Color = "#16161D" } },
+--     { Foreground = { Color = "#727169" } },
+--     { Text = " _ " },
+--   }),
+--   window_hide_hover = wezterm.format({
+--     { Background = { Color = "#2A2A37" } },
+--     { Foreground = { Color = "#DCD7BA" } },
+--     { Text = " _ " },
+--   }),
+--   window_maximize = wezterm.format({
+--     { Background = { Color = "#16161D" } },
+--     { Foreground = { Color = "#727169" } },
+--     { Text = " [] " },
+--   }),
+--   window_maximize_hover = wezterm.format({
+--     { Background = { Color = "#2A2A37" } },
+--     { Foreground = { Color = "#DCD7BA" } },
+--     { Text = " [] " },
+--   }),
+--   window_close = wezterm.format({
+--     { Background = { Color = "#16161D" } },
+--     { Foreground = { Color = "#727169" } },
+--     { Text = " X " },
+--   }),
+--   window_close_hover = wezterm.format({
+--     { Background = { Color = "#2A2A37" } },
+--     { Foreground = { Color = "#DCD7BA" } },
+--     { Text = " X " },
+--   }),
+-- }
 config.show_tab_index_in_tab_bar = true
 config.hide_mouse_cursor_when_typing = false
 

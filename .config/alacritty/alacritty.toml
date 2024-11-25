@@ -1,29 +1,3 @@
-# https://alacritty.org/config-alacritty.html
-
-###########
-# GENERAL #
-###########
-
-# Import additional configuration files
-import = [
-  "~/.config/alacritty/kanagawa.toml"
-]
-
-# Shell program and its arguments
-# Default for Linux/BSD/macOS is $SHELL or user's login shell
-# Default for Windows is "powershell"
-#[shell]
-#program = "/bin/zsh"  # Example for Linux/BSD/macOS
-#args = ["-l"]
-
-# Working directory
-working_directory = "None"  # Default: "None"
-
-# Live config reload (changes require restart)
-live_config_reload = true  # Default: true
-
-# Offer IPC using alacritty msg (unix only)
-ipc_socket = true  # Default: true
 
 #######
 # ENV #
@@ -100,19 +74,19 @@ multiplier = 1  # Default: 3
 [font]
 
 # Normal font style
-normal = { family = "Iosevka Nerd Font", style = "Bold" }  # Default for Linux/BSD: "monospace", Regular
+normal = { family = "Iosevka Nerd Font", style = "Regular" }  # Default for Linux/BSD: "monospace", Regular
 
 # Bold font style
-bold = { style = "ExtraBold" }  # Inherits family from normal, Default style: Bold
+bold = { style = "Bold" }  # Inherits family from normal, Default style: Bold
 
 # Italic font style
 italic = { style = "Italic" }  # Inherits family from normal, Default style: Italic
 
 # Bold Italic font style
-bold_italic = { style = "ExtraBoldItalic" }  # Inherits family from normal, Default style: Bold Italic
+bold_italic = { style = "BoldItalic" }  # Inherits family from normal, Default style: Bold Italic
 
 # Font size in points
-size = 12  # Default: 11.25
+size = 16  # Default: 11.25
 
 # Offset is extra space around each character
 offset = { x = 0, y = 0 }  # Default: x = 0, y = 0
@@ -121,7 +95,7 @@ offset = { x = 0, y = 0 }  # Default: x = 0, y = 0
 glyph_offset = { x = 0, y = 0 }  # Default: x = 0, y = 0
 
 # Use built-in font for box drawing characters
-builtin_box_drawing = true  # Default: true
+builtin_box_drawing = false  # Default: true
 
 ##########
 # COLORS #
@@ -133,7 +107,7 @@ builtin_box_drawing = true  # Default: true
 transparent_background_colors = false  # Default
 
 # Draw bold text with bright colors
-draw_bold_text_with_bright_colors = false  # Default
+draw_bold_text_with_bright_colors = true
 
 ########
 # BELL #
@@ -242,4 +216,32 @@ bindings = [
     # { key = "Key", mods = "Modifiers", action = "Action" },
     # { key = "Key", mods = "Modifiers", chars = "Characters to send" },
     # ...
+]
+
+[general]
+
+# Live config reload (changes require restart)
+live_config_reload = true  # Default: true
+
+# Shell program and its arguments
+# Default for Linux/BSD/macOS is $SHELL or user's login shell
+# Default for Windows is "powershell"
+#[shell]
+#program = "/bin/zsh"  # Example for Linux/BSD/macOS
+#args = ["-l"]
+
+# Working directory
+working_directory = "None"  # Default: "None"
+
+# Offer IPC using alacritty msg (unix only)
+ipc_socket = true  # Default: true
+# https://alacritty.org/config-alacritty.html
+
+###########
+# GENERAL #
+###########
+
+# Import additional configuration files
+import = [
+  "~/.config/alacritty/kanagawa.toml"
 ]
