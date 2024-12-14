@@ -47,6 +47,7 @@ config.underline_thickness = "300%"
 config.underline_position = "200%"
 config.font = wezterm.font({ family = "Iosevka Nerd Font", weight = "Bold" })
 
+config.front_end = "WebGpu"
 config.check_for_updates = false
 config.warn_about_missing_glyphs = false
 config.audible_bell = "Disabled"
