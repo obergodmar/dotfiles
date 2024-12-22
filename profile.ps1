@@ -1,3 +1,5 @@
+$env:TERM="msys"
+
 oh-my-posh init pwsh --config 'C:/Users/oberg/Code/dotfiles/obergodmar.omp.json' | Invoke-Expression
 
 Import-Module $env:ChocolateyInstall\helpers\chocolateyProfile.psm1
