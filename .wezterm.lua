@@ -45,7 +45,7 @@ config.color_schemes = {
 
 config.underline_thickness = "300%"
 config.underline_position = "200%"
-config.font = wezterm.font({ family = "Iosevka Nerd Font", weight = "Bold" })
+config.font = wezterm.font({ family = "Iosevka Nerd Font", weight = "Medium" })
 
 config.front_end = "WebGpu"
 config.check_for_updates = false
@@ -65,7 +65,7 @@ end
 
 -- Configs for OSX only
 if wezterm.target_triple == "x86_64-apple-darwin" or wezterm.target_triple == "aarch64-apple-darwin" then
-  config.font_size = 16
+  config.font_size = 14
 end
 
 -- Configs for Linux only
