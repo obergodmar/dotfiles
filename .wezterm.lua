@@ -60,7 +60,7 @@ config.visual_bell = {
 -- Configs for Windows only
 if wezterm.target_triple == "x86_64-pc-windows-msvc" then
   config.default_prog = { "pwsh.exe", "-nologo", "-WorkingDirectory", "~" }
-  config.font_size = 12
+  config.font_size = 10.8
 end
 
 -- Configs for OSX only
