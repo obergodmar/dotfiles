@@ -2,24 +2,23 @@
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
   "blocks": [
     {
-      "type": "prompt",
       "alignment": "left",
       "segments": [
         {
+          "foreground": "#76946a",
           "properties": {
-            "cache_duration": "none",
             "folder_separator_icon": "/",
             "style": "full"
           },
+          "style": "plain",
           "template": "{{ .Path }} ",
-          "foreground": "#76946a",
-          "type": "path",
-          "style": "plain"
+          "type": "path"
         },
         {
+          "foreground": "#957fb8",
+          "powerline_symbol": "\ue0b0",
           "properties": {
-            "cache_duration": "none",
-            "cherry_pick_icon": "✓ ",
+            "cherry_pick_icon": "\u2713 ",
             "commit_icon": "\u25b7 ",
             "fetch_status": true,
             "merge_icon": "\u25f4 ",
@@ -27,39 +26,32 @@
             "rebase_icon": "\u2c62 ",
             "tag_icon": "\u25b6 "
           },
+          "style": "plain",
           "template": "{{ .HEAD }}{{ if and (eq .Ahead 0) (eq .Behind 0) }} \u2261{{end}}{{ if gt .Ahead 0 }} \u2191{{.Ahead}}{{end}}{{ if gt .Behind 0 }} \u2193{{.Behind}}{{end}} {{ if .Working.Changed }}+{{ .Working.Added }} ~{{ .Working.Modified }} -{{ .Working.Deleted }} {{ end }}",
-          "foreground": "#957fb8",
-          "powerline_symbol": "\ue0b0",
-          "type": "git",
-          "style": "plain"
-        }
-      ]
-    },
-    {
-      "type": "prompt",
-      "alignment": "left",
-      "segments": [
-        {
-          "properties": {
-            "cache_duration": "none"
-          },
-          "template": "\ue3bf ",
-          "foreground": "#c34043",
-          "type": "root",
-          "style": "plain"
-        },
-        {
-          "properties": {
-            "cache_duration": "none"
-          },
-          "template": "$ ",
-          "foreground": "#dcd7ba",
-          "type": "text",
-          "style": "plain"
+          "type": "git"
         }
       ],
-      "newline": true
+      "type": "prompt"
+    },
+    {
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "foreground": "#c34043",
+          "style": "plain",
+          "template": "\ue3bf ",
+          "type": "root"
+        },
+        {
+          "foreground": "#dcd7ba",
+          "style": "plain",
+          "template": "$ ",
+          "type": "text"
+        }
+      ],
+      "type": "prompt"
     }
   ],
-  "version": 3
+  "version": 2
 }
