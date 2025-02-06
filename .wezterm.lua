@@ -29,16 +29,14 @@ config.color_schemes = {
     background = "#f2ecbc",
     foreground = "#545464",
 
-    cursor_bg = "#43436c",
     cursor_fg = "#f2ecbc",
+    cursor_bg = "#43436c",
 
-    selection_bg = "#c9cbd1",
     selection_fg = "#43436c",
+    selection_bg = "#c9cbd1",
 
     ansi = { "#1F1F28", "#c84053", "#6f894e", "#77713f", "#4d699b", "#b35b79", "#597b75", "#545464" },
-
     brights = { "#8a8980", "#d7474b", "#6e915f", "#836f4a", "#6693bf", "#624c83", "#5e857a", "#43436c" },
-
     indexed = { [16] = "#cc6d00", [17] = "#e82424" },
   },
 }
@@ -124,25 +122,25 @@ config.window_padding = {
 config.window_frame = {
   font = config.font,
   font_size = config.font_size,
-  inactive_titlebar_bg = "#16161D",
-  active_titlebar_bg = "#1F1F28",
+  inactive_titlebar_bg = "#16161d",
+  active_titlebar_bg = "#1f1f28",
   inactive_titlebar_fg = "#727169",
-  active_titlebar_fg = "#C8C093",
-  inactive_titlebar_border_bottom = "#54546D",
+  active_titlebar_fg = "#c8c093",
+  inactive_titlebar_border_bottom = "#54546d",
   active_titlebar_border_bottom = "#54546D",
   button_fg = "#727169",
-  button_bg = "#16161D",
-  button_hover_fg = "#DCD7BA",
-  button_hover_bg = "#2A2A37",
+  button_bg = "#16161d",
+  button_hover_fg = "#dcd7ba",
+  button_hover_bg = "#2a2a37",
 
   border_left_width = "0.25cell",
   border_right_width = "0.25cell",
   border_bottom_height = "0.1cell",
   border_top_height = "0.1cell",
-  border_left_color = "#16161D",
-  border_right_color = "#16161D",
-  border_bottom_color = "#16161D",
-  border_top_color = "#16161D",
+  border_left_color = "#16161d",
+  border_right_color = "#16161d",
+  border_bottom_color = "#16161d",
+  border_top_color = "#16161d",
 }
 
 config.default_cursor_style = "SteadyBlock"
