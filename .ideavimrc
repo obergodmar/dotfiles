@@ -11,11 +11,61 @@ set so=5
 set incsearch
 set nu
 
+set foldenable
+set hlsearch
+set autoindent
+set history=1000
+set ignorecase
+set smartcase
+
 set ideajoin
 set idearefactormode=keep
 
-map <leader>cr <Action>(RenameElement)
-map <leader>F <Action>(SelectInProjectView)
-map ]d <Action>(GotoNextError)
+" Normal mode keybindings
 map K <Action>(ShowHoverInfo)
 map <leader>f <Action>(ReformatCode)
+map ]c <Action>(VcsShowNextChangeMarker)
+map [c <Action>(VcsShowPrevChangeMarker)
+map <leader>hs <Action>(VcsCommitChangedPaths)
+
+" Tab management
+map <leader>tn <Action>(NextTab)
+map <leader>tp <Action>(PreviousTab)
+
+" Copy file paths
+map <leader>cf <Action>(CopyAbsolutePath)
+
+" Quick file operations
+map <CR> *
+map :W :w
+map :Wq :wq
+map :WQ :wq
+map :Q :q
+map :Qa :qa
+map :QA :qa
+
+" Clipboard operations
+map <leader>y "+y
+map <leader>Y "+y$
+map <leader>p "+p
+map <leader>P "+P
+
+" Search and navigation
+map <leader>sG <Action>(FindInPath)
+map <leader>sg <Action>(FindUsages)
+map <leader>sf <Action>(SearchEverywhere)
+map <leader>sd <Action>(ActivateProblemsView)
+map <leader>? <Action>(SearchEverywhere)
+map [d <Action>(GotoPreviousError)
+map ]d <Action>(GotoNextError)
+map <leader>e <Action>(GotoNextError)
+map gr <Action>(FindUsages)
+map <leader>ca <Action>(ShowIntentionActions)
+map <leader>F <Action>(SelectInProjectView)
+map <leader>cr <Action>(RenameElement)
+map :G <Action>(ActivateVersionControlToolWindow)
+map <Esc> :nohlsearch<CR>
+
+" Smooth scrolling
+map <C-d> 15gjzz
+map <C-u> 15gkzz
