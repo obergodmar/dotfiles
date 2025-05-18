@@ -12,7 +12,7 @@
             "style": "full"
           },
           "template": "{{ .Path }} ",
-          "foreground": "#76946a",
+          "foreground": "#a6da95",
           "type": "path",
           "style": "plain"
         },
@@ -28,7 +28,7 @@
             "tag_icon": "\u25b6 "
           },
           "template": "{{ .HEAD }}{{ if and (eq .Ahead 0) (eq .Behind 0) }} \u2261{{end}}{{ if gt .Ahead 0 }} \u2191{{.Ahead}}{{end}}{{ if gt .Behind 0 }} \u2193{{.Behind}}{{end}} {{ if .Working.Changed }}+{{ .Working.Added }} ~{{ .Working.Modified }} -{{ .Working.Deleted }} {{ end }}",
-          "foreground": "#957fb8",
+          "foreground": "#f5bde6",
           "powerline_symbol": "\ue0b0",
           "type": "git",
           "style": "plain"
@@ -44,7 +44,7 @@
             "cache_duration": "none"
           },
           "template": "\ue3bf ",
-          "foreground": "#c34043",
+          "foreground": "#ed8796",
           "type": "root",
           "style": "plain"
         },
@@ -53,7 +53,7 @@
             "cache_duration": "none"
           },
           "template": "$ ",
-          "foreground": "#dcd7ba",
+          "foreground": "#acb0be",
           "type": "text",
           "style": "plain"
         }
