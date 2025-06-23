@@ -1,0 +1,24 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "explorer-open-file",
+      "command": "${command:explorer.openAndPassFocus}"
+    },
+    {
+      "label": "explorer-open-file",
+      "command": "${command:explorer.openAndPassFocus}"
+    },
+    {
+      "label": "close-sidebar",
+      "command": "${command:workbench.action.toggleSidebarVisibility}"
+    },
+    {
+      "label": "explorer-select-file",
+      "dependsOrder": "sequence",
+      "dependsOn": ["explorer-open-file", "close-sidebar"]
+    }
+  ]
+}

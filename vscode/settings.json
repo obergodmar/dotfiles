@@ -1,0 +1,502 @@
+{
+  "editor.semanticTokenColorCustomizations": {
+    "[Catppuccin Macchiato]": {
+      "rules": {
+        "variable.readonly.local": "#f5a97f"
+      }
+    }
+  },
+  "editor.tokenColorCustomizations": {
+    "[Catppuccin Macchiato]": {
+      "textMateRules": [
+        {
+          "scope": ["support.type.primitive"],
+          "settings": {
+            "foreground": "#eed49f"
+          }
+        },
+        {
+          "scope": ["support.type.builtin.tsx"],
+          "settings": {
+            "foreground": "#f5a97f"
+          }
+        }
+      ]
+    }
+  },
+  // #region editor
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.inlineSuggest.fontFamily": "Iosevka Nerd Font",
+  "editor.fontLigatures": true,
+  "editor.fontFamily": "Iosevka Nerd Font",
+  "editor.fontWeight": 450,
+  "editor.fontSize": 14,
+  "editor.lineHeight": 1.25,
+  "editor.lineNumbers": "relative",
+  "editor.renderLineHighlight": "all",
+  "editor.insertSpaces": true,
+  "editor.tabCompletion": "on",
+  "editor.cursorSurroundingLines": 16,
+  "editor.autoIndent": "full",
+  "search.smartCase": true,
+  "editor.quickSuggestions": {
+    "other": "on",
+    "comments": "on",
+    "strings": "on"
+  },
+  "editor.wordWrap": "off",
+  "editor.smoothScrolling": false,
+  "editor.folding": true,
+  "editor.foldingStrategy": "auto",
+  "editor.renderWhitespace": "trailing",
+  "editor.renderControlCharacters": true,
+  "editor.selectionHighlight": true,
+  "editor.semanticHighlighting.enabled": true,
+  "editor.inlayHints.enabled": "on",
+  "editor.inlayHints.padding": true,
+  "editor.minimap.size": "fit",
+  "editor.minimap.enabled": false,
+  "editor.showFoldingControls": "always",
+  "editor.foldingHighlight": true,
+  "editor.cursorBlinking": "solid",
+  "editor.inlineSuggest.syntaxHighlightingEnabled": true,
+  "editor.suggest.preview": true,
+  "editor.lightbulb.enabled": "off",
+  "editor.autoSurround": "languageDefined",
+  "editor.linkedEditing": true,
+  "editor.scrollbar.verticalScrollbarSize": 5,
+  "editor.bracketPairColorization.enabled": false,
+
+  // #endregion
+
+  "diffEditor.diffAlgorithm": "advanced",
+  "diffEditor.hideUnchangedRegions.enabled": false,
+  "diffEditor.renderGutterMenu": false,
+  "diffEditor.renderSideBySide": true,
+  "diffEditor.useInlineViewWhenSpaceIsLimited": false,
+
+  // #region terminal
+  "terminal.integrated.fontFamily": "Iosevka Nerd Font",
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.fontWeight": 500,
+  "terminal.integrated.fontWeightBold": 900,
+  "terminal.integrated.suggest.enabled": true,
+  "terminal.integrated.allowChords": false,
+  "terminal.integrated.copyOnSelection": true,
+  "terminal.integrated.scrollback": 10000,
+  "terminal.integrated.sendKeybindingsToShell": false,
+  "terminal.integrated.defaultProfile.osx": "tmux-shell",
+  "terminal.integrated.profiles.osx": {
+    "tmux-shell": {
+      "path": "tmux",
+      "args": ["new-session", "-A", "-s", "vscode"]
+    }
+  },
+  // #endregion
+
+  "files.encoding": "utf8",
+  "files.associations": {
+    "*.nix": "nix"
+  },
+
+  // #region workbench
+  "workbench.editor.labelFormat": "medium",
+  "workbench.iconTheme": "catppuccin-macchiato",
+  "workbench.editor.showTabs": "multiple",
+  "workbench.editor.highlightModifiedTabs": true,
+  "workbench.editor.wrapTabs": true,
+  "workbench.editor.pinnedTabSizing": "compact",
+  "workbench.editor.tabSizing": "fixed",
+  "workbench.activityBar.location": "top",
+  "workbench.panel.showLabels": false,
+  "workbench.startupEditor": "newUntitledFile",
+  "workbench.editor.enablePreviewFromCodeNavigation": true,
+  "workbench.editor.navigationScope": "editorGroup",
+  "workbench.commandPalette.experimental.suggestCommands": true,
+  "workbench.editor.restoreViewState": true,
+  "workbench.fontAliasing": "default",
+  "workbench.colorTheme": "Catppuccin Macchiato",
+  "workbench.colorCustomizations": {
+    "editorCursor.background": "#1F1F28",
+    "editorCursor.foreground": "#DCD8BA",
+    "statusBar.background": "#2A2A37",
+    "statusBarItem.remoteBackground": "#938AA9",
+    "statusBarItem.remoteForeground": "#1F1F28",
+    "statusBarItem.remoteHoverBackground": "#957FB8"
+  },
+  "window.newWindowProfile": "Default",
+  "window.density.editorTabHeight": "compact",
+
+  "errorLens.fontWeight": "500",
+  "errorLens.fontStyleItalic": true,
+  "errorLens.statusBarIconsEnabled": true,
+  "errorLens.statusBarColorsEnabled": true,
+  "errorLens.statusBarIconsTargetProblems": "activeEditor",
+  "errorLens.enabledDiagnosticLevels": ["error", "warning", "info", "hint"],
+  "errorLens.enableOnDiffView": true,
+  "errorLens.statusBarIconsUseBackground": false,
+
+  "search.searchEditor.focusResultsOnSearch": true,
+
+  "typescript.tsserver.experimental.enableProjectDiagnostics": false,
+  "javascript.suggest.completeFunctionCalls": true,
+  "typescript.suggest.completeFunctionCalls": true,
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+
+  "typescript.referencesCodeLens.enabled": false,
+  "typescript.referencesCodeLens.showOnAllFunctions": false,
+  "typescript.implementationsCodeLens.enabled": false,
+
+  "typescript.inlayHints.parameterTypes.enabled": false,
+  "typescript.inlayHints.variableTypes.enabled": false,
+  "typescript.inlayHints.enumMemberValues.enabled": false,
+  "typescript.inlayHints.functionLikeReturnTypes.enabled": false,
+  "typescript.inlayHints.propertyDeclarationTypes.enabled": false,
+  "typescript.inlayHints.variableTypes.suppressWhenTypeMatchesName": false,
+  "typescript.inlayHints.parameterNames.enabled": "all",
+
+  "github.copilot.chat.localeOverride": "en",
+  //   "http.proxy": "http://localhost:12334",
+
+  "gitlens.cloudIntegrations.enabled": false,
+  "gitlens.cloudPatches.enabled": false,
+  "gitlens.integrations.enabled": false,
+  "gitlens.statusBar.enabled": true,
+  "gitlens.liveshare.enabled": false,
+  "gitlens.plusFeatures.enabled": false,
+  "gitlens.telemetry.enabled": false,
+  "gitlens.launchpad.indicator.enabled": false,
+  "gitlens.currentLine.fontWeight": "500",
+  "gitlens.codeLens.enabled": false,
+
+  // "find-it-faster.general.useTerminalInEditor": true,
+  // "find-it-faster.general.batTheme": "Kanagawa",
+  // "find-it-faster.general.killTerminalAfterUse": true,
+  // "find-it-faster.general.shellPathForTerminal": "/bin/zsh",
+  // "find-it-faster.general.showMaximizedTerminal": true,
+
+  "typos.diagnosticSeverity": "Information",
+
+  "projectManager.groupList": true,
+
+  // #region VIM
+  "vim.leader": "<space>",
+  "vim.foldfix": true,
+  "vim.hlsearch": true,
+  "vim.autoindent": true,
+  "vim.surround": true,
+  "vim.cursorStylePerMode.replace": "underline",
+  "vim.highlightedyank.enable": true,
+  "vim.history": 1000,
+  "vim.normalModeKeyBindings": [
+    {
+      "before": ["K"],
+      "after": ["g", "h"]
+    },
+    {
+      "before": ["<leader>", "f"],
+      "commands": ["editor.action.formatDocument"]
+    },
+    {
+      "before": ["]", "c"],
+      "commands": ["editor.action.dirtydiff.next"]
+    },
+    {
+      "before": ["[", "c"],
+      "commands": ["editor.action.dirtydiff.previous"]
+    },
+    {
+      "before": ["<leader>", "h", "n"],
+      "commands": ["workbench.action.compareEditor.nextChange"]
+    },
+    {
+      "before": ["<leader>", "h", "p"],
+      "commands": ["workbench.action.compareEditor.previousChange"]
+    },
+    {
+      "before": ["<leader>", "h", "o"],
+      "commands": ["git.openChange"]
+    },
+    {
+      "before": ["<leader>", "h", "s"],
+      "commands": ["git.stageSelectedRanges"]
+    },
+    {
+      "before": ["<leader>", "h", "t"],
+      "commands": ["diffEditor.switchSide"]
+    },
+    {
+      "before": ["<leader>", "h", "r"],
+      "commands": ["git.revertSelectedRanges"]
+    },
+    {
+      "before": ["<leader>", "h", "c"],
+      "commands": [
+        "git.closeAllDiffEditors",
+        "workbench.action.focusNextGroup",
+        "workbench.action.focusPreviousGroup"
+      ]
+    },
+    {
+      "before": ["<leader>", "t", "a"],
+      "commands": ["workbench.action.files.newUntitledFile"]
+    },
+    {
+      "before": ["<leader>", "t", "o"],
+      "commands": ["workbench.action.closeOtherEditors"]
+    },
+    {
+      "before": ["<leader>", "t", "c"],
+      "commands": ["workbench.action.closeActiveEditor"]
+    },
+    {
+      "before": ["<leader>", "t", "n"],
+      "commands": ["workbench.action.nextEditorInGroup"]
+    },
+    {
+      "before": ["<leader>", "t", "p"],
+      "commands": ["workbench.action.previousEditorInGroup"]
+    },
+    {
+      "before": ["<leader>", "c", "p"],
+      "commands": ["copyRelativeFilePath"]
+    },
+    {
+      "before": ["<leader>", "c", "f"],
+      "commands": ["copyFilePath"]
+    },
+    {
+      "before": ["<CR>"],
+      "after": ["*"]
+    },
+    {
+      "before": [":", "W", "<CR>"],
+      "commands": ["workbench.action.files.save"]
+    },
+    {
+      "before": [":", "W", "q", "<CR>"],
+      "commands": [
+        "workbench.action.files.save",
+        "workbench.action.closeActiveEditor"
+      ]
+    },
+    {
+      "before": [":", "W", "Q", "<CR>"],
+      "commands": [
+        "workbench.action.files.save",
+        "workbench.action.closeActiveEditor"
+      ]
+    },
+
+    {
+      "before": [":", "Q", "<CR>"],
+      "commands": ["workbench.action.closeActiveEditor"]
+    },
+    {
+      "before": [":", "Q", "a", "<CR>"],
+      "commands": ["workbench.action.closeAllEditors"]
+    },
+    {
+      "before": [":", "Q", "A", "<CR>"],
+      "commands": ["workbench.action.closeAllEditors"]
+    },
+
+    {
+      "before": ["<leader>", "y"],
+      "after": ["\"", "+", "y"]
+    },
+    {
+      "before": ["<leader>", "Y"],
+      "after": ["\"", "+", "y", "g", "_"]
+    },
+    {
+      "before": ["<leader>", "p"],
+      "after": ["\"", "+", "p"]
+    },
+    {
+      "before": ["<leader>", "P"],
+      "after": ["\"", "+", "P"]
+    },
+    {
+      "before": ["<leader>", "<leader>"],
+      "commands": ["workbench.files.action.focusOpenEditorsView"]
+    },
+    {
+      "before": ["<leader>", "w", "r"],
+      "commands": ["projectManager.listProjects"]
+    },
+    {
+      "before": ["<leader>", "w", "s"],
+      "commands": ["projectManager.saveProject"]
+    },
+    {
+      "before": ["<leader>", "s", "G"],
+      "commands": ["workbench.action.findInFiles"]
+    },
+    {
+      "before": ["<leader>", "s", "g"],
+      "commands": ["extension.searchUnderCursor"]
+    },
+    // {
+    //   "before": ["<leader>", "s", "G"],
+    //   "commands": ["workbench.action.findInFiles"]
+    // },
+    // {
+    //   "before": ["<leader>", "/"],
+    //   "commands": ["find-it-faster.resumeSearch"]
+    // },
+    // {
+    //   "before": ["<leader>", "s", "a"],
+    //   "commands": ["find-it-faster.findWithinFilesWithType"]
+    // },
+    {
+      "before": ["<leader>", "s", "f"],
+      "commands": ["workbench.action.quickOpen"]
+    },
+    {
+      "before": ["<leader>", "s", "d"],
+      "commands": ["workbench.actions.view.toggleProblems"]
+    },
+    {
+      "before": ["<leader>", "?"],
+      "commands": ["workbench.action.quickOpen"]
+    },
+    {
+      "before": ["[", "d"],
+      "commands": ["editor.action.marker.prev"]
+    },
+    {
+      "before": ["]", "d"],
+      "commands": ["editor.action.marker.next"]
+    },
+    {
+      "before": ["<leader>", "e"],
+      "commands": ["editor.action.marker.next"]
+    },
+    {
+      "before": ["g", "r"],
+      "commands": ["editor.action.goToReferences"]
+    },
+    {
+      "before": ["<leader>", "c", "a"],
+      "commands": ["editor.action.quickFix"]
+    },
+    {
+      "before": ["<leader>", "F"],
+      "commands": ["workbench.view.explorer"]
+    },
+    {
+      "before": ["<leader>", "c", "r"],
+      "commands": ["editor.action.rename"]
+    },
+    {
+      "before": ["<leader>", "tab"],
+      "commands": ["workbench.action.toggleSidebarVisibility"]
+    },
+    {
+      "before": ["<leader>", "s", "s"],
+      "commands": ["workbench.view.scm"]
+    },
+    {
+      "before": [":", "G", "<CR>"],
+      "commands": ["workbench.view.scm"]
+    },
+    {
+      "before": ["Esc"],
+      "commands": [":nohl"]
+    },
+    {
+      "before": ["<leader>", "m"],
+      "commands": ["bookmarks.toggle"]
+    },
+    {
+      "before": ["<leader>", "b"],
+      "commands": ["bookmarks.list"]
+    },
+    {
+      "before": ["<leader>", "B"],
+      "commands": ["gitlens.views.lineHistory.focus"]
+    },
+    {
+      "before": ["<C-o>"],
+      "commands": ["workbench.action.navigateBack"]
+    },
+    {
+      "before": ["<C-i>"],
+      "commands": ["workbench.action.navigateForward"]
+    },
+    {
+      "before": ["<C-d>"],
+      "after": ["1", "5", "g", "j", "z", "z"]
+    },
+    {
+      "before": ["<C-u>"],
+      "after": ["1", "5", "g", "k", "z", "z"]
+    }
+  ],
+
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": [">"],
+      "commands": ["editor.action.indentLines"]
+    },
+    {
+      "before": ["<"],
+      "commands": ["editor.action.outdentLines"]
+    },
+    {
+      "before": ["<leader>", "y"],
+      "after": ["\"", "+", "y"]
+    },
+    {
+      "before": ["<leader>", "Y"],
+      "after": ["\"", "+", "y", "g", "_"]
+    },
+    {
+      "before": ["<leader>", "p"],
+      "after": ["\"", "+", "p"]
+    },
+    {
+      "before": ["<leader>", "P"],
+      "after": ["\"", "+", "P"]
+    },
+    {
+      "before": ["$"],
+      "after": ["g", "_"]
+    },
+    {
+      "before": ["g", "_"],
+      "after": ["$"]
+    },
+    {
+      "before": ["<leader>", "h", "s"],
+      "commands": ["git.stageSelectedRanges"]
+    }
+  ],
+  "explorer.confirmDelete": false,
+  "vsicons.dontShowNewVersionMessage": true,
+  "security.workspace.trust.untrustedFiles": "open",
+  "window.commandCenter": false,
+  "explorer.confirmDragAndDrop": false,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "[shellscript]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  // #endregion
+
+  // #region nix
+  "nix.enableLanguageServer": true,
+  "nix.formatterPath": "nixfmt",
+  "nix.serverPath": "nixd",
+  "nix.serverSettings": {
+    "nixd": {
+      "formatting": {
+        "command": ["nixfmt"]
+      }
+    }
+  },
+  "[nix]": {
+    "editor.defaultFormatter": "jnoortheen.nix-ide"
+  }
+  // #endregion
+}

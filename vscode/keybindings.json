@@ -1,0 +1,127 @@
+// Place your key bindings in this file to override the defaults
+[
+  {
+    "key": "ctrl+z",
+    "command": "editor.action.triggerSuggest",
+    "when": "vim.mode == 'Insert' || vim.mode == 'Replace'"
+  },
+  {
+    "key": "cmd+\\",
+    "command": "-workbench.action.splitEditor"
+  },
+  {
+    "key": "cmd+\\",
+    "command": "-workbench.action.terminal.splitActiveTab",
+    "when": "terminalProcessSupported && terminalTabsFocus"
+  },
+  {
+    "key": "ctrl+\\",
+    "command": "workbench.action.terminal.new",
+    "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
+  },
+  {
+    "key": "ctrl+\\",
+    "command": "workbench.action.terminal.toggleTerminal",
+    "when": "terminal.active"
+  },
+  {
+    "key": "ctrl+w v",
+    "command": "workbench.action.splitEditor",
+    "when": "!terminalFocus"
+  },
+  {
+    "key": "ctrl+w s",
+    "command": "workbench.action.splitEditorDown",
+    "when": "!terminalFocus"
+  },
+  {
+    "key": "ctrl+w c",
+    "command": "workbench.action.closeEditorsInGroup",
+    "when": "!terminalFocus"
+  },
+  {
+    "key": "ctrl+w w",
+    "command": "workbench.action.focusNextGroup",
+    "when": "!terminalFocus"
+  },
+  {
+    "key": "ctrl+w p",
+    "command": "workbench.action.focusPreviousGroup",
+    "when": "!terminalFocus"
+  },
+  {
+    "key": "ctrl+w o",
+    "command": "workbench.action.closeEditorsInOtherGroups",
+    "when": "!terminalFocus"
+  },
+  {
+    "key": "ctrl+c",
+    "command": "workbench.action.closePanel",
+    "when": "!editorFocus"
+  },
+  {
+    "key": "ctrl+f",
+    "command": "workbench.action.toggleMaximizedPanel",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+f",
+    "command": "workbench.view.explorer",
+    "when": "!terminalFocus"
+  },
+  {
+    "key": "ctrl+v",
+    "command": "explorer.openToSide",
+    "when": "!editorFocus"
+  },
+  {
+    "key": "enter",
+    "command": "workbench.action.tasks.runTask",
+    "args": "explorer-select-file",
+    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsFolder && !inputFocus"
+  },
+  {
+    "key": "ctrl+left",
+    "command": "workbench.action.navigateLeft",
+    "when": "!terminalFocus && vim.mode == 'Normal'"
+  },
+  {
+    "key": "ctrl+down",
+    "command": "workbench.action.navigateDown",
+    "when": "!terminalFocus && vim.mode == 'Normal'"
+  },
+  {
+    "key": "ctrl+up",
+    "command": "workbench.action.navigateUp",
+    "when": "!terminalFocus && vim.mode == 'Normal'"
+  },
+  {
+    "key": "ctrl+right",
+    "command": "workbench.action.navigateRight",
+    "when": "!terminalFocus && vim.mode == 'Normal'"
+  },
+  {
+    "key": "f1",
+    "command": "-workbench.action.showCommands"
+  },
+  {
+    "key": "shift+tab",
+    "command": "editor.action.inlineSuggest.commit",
+    "when": "inlineEditIsVisible && tabShouldAcceptInlineEdit && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible || inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible || inlineEditIsVisible && inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible || inlineEditIsVisible && inlineSuggestionVisible && tabShouldAcceptInlineEdit && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible"
+  },
+  {
+    "key": "tab",
+    "command": "-editor.action.inlineSuggest.commit",
+    "when": "inlineEditIsVisible && tabShouldAcceptInlineEdit && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible || inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible || inlineEditIsVisible && inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible || inlineEditIsVisible && inlineSuggestionVisible && tabShouldAcceptInlineEdit && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible"
+  },
+  {
+    "key": "shift+tab",
+    "command": "editor.action.inlineSuggest.commit",
+    "when": "inInlineEditsPreviewEditor"
+  },
+  {
+    "key": "tab",
+    "command": "-editor.action.inlineSuggest.commit",
+    "when": "inInlineEditsPreviewEditor"
+  }
+]
