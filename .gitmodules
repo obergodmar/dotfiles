@@ -1,3 +1,0 @@
-[submodule ".config/bat/themes/kanagawa-tmTheme"]
-	path = .config/bat/themes/kanagawa-tmTheme
-	url = git@github.com:obergodmar/kanagawa-tmTheme.git

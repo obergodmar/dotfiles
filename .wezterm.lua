@@ -99,18 +99,18 @@ wezterm.on("format-tab-title", function(tab)
   }
 end)
 
-wezterm.on("user-var-changed", function(window, _, name, value)
-  local overrides = window:get_config_overrides() or {}
-  if name == "colorscheme" and value == "update" then
-    if not overrides.color_scheme or overrides.color_scheme == "kanagawa-wave" then
-      overrides.color_scheme = "kanagawa-lotus"
-    else
-      overrides.color_scheme = "kanagawa-wave"
-    end
-  end
+-- wezterm.on("user-var-changed", function(window, _, name, value)
+--   local overrides = window:get_config_overrides() or {}
+--   if name == "colorscheme" and value == "update" then
+--     if not overrides.color_scheme or overrides.color_scheme == "kanagawa-wave" then
+--       overrides.color_scheme = "kanagawa-lotus"
+--     else
+--       overrides.color_scheme = "kanagawa-wave"
+--     end
+--   end
 
-  window:set_config_overrides(overrides)
-end)
+--   window:set_config_overrides(overrides)
+-- end)
 
 config.keys = {
   { key = "{", mods = "SHIFT|ALT", action = act.MoveTabRelative(-1) },
