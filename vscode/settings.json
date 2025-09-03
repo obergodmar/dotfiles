@@ -1,4 +1,5 @@
 {
+  // #region editor
   "editor.semanticTokenColorCustomizations": {
     "[Catppuccin Macchiato]": {
       "rules": {
@@ -24,7 +25,6 @@
       ]
     }
   },
-  // #region editor
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.inlineSuggest.fontFamily": "Iosevka Nerd Font",
   "editor.fontLigatures": true,
@@ -67,7 +67,7 @@
   "editor.scrollbar.verticalScrollbarSize": 5,
   "editor.bracketPairColorization.enabled": false,
 
-  // #endregion
+  // #endregion editor
 
   "diffEditor.diffAlgorithm": "advanced",
   "diffEditor.hideUnchangedRegions.enabled": false,
@@ -92,12 +92,19 @@
       "args": ["new-session", "-A", "-s", "vscode"]
     }
   },
-  // #endregion
+  // #endregion terminal
 
   "files.encoding": "utf8",
   "files.associations": {
     "*.nix": "nix"
   },
+
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "explorer.autoReveal": true,
+
+  "redhat.telemetry.enabled": false,
+  "github.copilot.nextEditSuggestions.enabled": true,
 
   // #region workbench
   "workbench.editor.labelFormat": "medium",
@@ -124,8 +131,11 @@
     "statusBarItem.remoteForeground": "#1F1F28",
     "statusBarItem.remoteHoverBackground": "#957FB8"
   },
+  // #endregion workbench
+
   "window.newWindowProfile": "Default",
   "window.density.editorTabHeight": "compact",
+  "window.commandCenter": false,
 
   "errorLens.fontWeight": "500",
   "errorLens.fontStyleItalic": true,
@@ -154,6 +164,13 @@
   "typescript.inlayHints.propertyDeclarationTypes.enabled": false,
   "typescript.inlayHints.variableTypes.suppressWhenTypeMatchesName": false,
   "typescript.inlayHints.parameterNames.enabled": "all",
+
+  "typescript.updateImportsOnFileMove.enabled": "always",
+
+  "vsicons.dontShowNewVersionMessage": true,
+  "[shellscript]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
 
   "github.copilot.chat.localeOverride": "en",
   //   "http.proxy": "http://localhost:12334",
@@ -473,16 +490,7 @@
       "commands": ["git.stageSelectedRanges"]
     }
   ],
-  "explorer.confirmDelete": false,
-  "vsicons.dontShowNewVersionMessage": true,
-  "security.workspace.trust.untrustedFiles": "open",
-  "window.commandCenter": false,
-  "explorer.confirmDragAndDrop": false,
-  "typescript.updateImportsOnFileMove.enabled": "always",
-  "[shellscript]": {
-    "editor.defaultFormatter": "foxundermoon.shell-format"
-  },
-  // #endregion
+  // #endregion VIM
 
   // #region nix
   "nix.enableLanguageServer": true,
@@ -498,5 +506,5 @@
   "[nix]": {
     "editor.defaultFormatter": "jnoortheen.nix-ide"
   }
-  // #endregion
+  // #endregion nix
 }
