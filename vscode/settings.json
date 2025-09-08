@@ -367,6 +367,10 @@
     //   "commands": ["find-it-faster.findWithinFilesWithType"]
     // },
     {
+      "before": ["<leader>", "c", "s"],
+      "commands": ["workbench.action.showCommands"]
+    },
+    {
       "before": ["<leader>", "s", "f"],
       "commands": ["workbench.action.quickOpen"]
     },
