@@ -66,6 +66,9 @@ map <leader>cr <Action>(RenameElement)
 map :G <Action>(ActivateVersionControlToolWindow)
 map <Esc> :nohlsearch<CR>
 
+map <C-Left>  <Action>(PrevSplitter)
+map <C-Right> <Action>(NextSplitter)
+
 " Smooth scrolling
 map <C-d> 15gjzz
 map <C-u> 15gkzz
