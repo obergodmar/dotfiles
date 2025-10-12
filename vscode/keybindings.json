@@ -70,11 +70,6 @@
     "when": "!terminalFocus"
   },
   {
-    "key": "ctrl+v",
-    "command": "explorer.openToSide",
-    "when": "!editorFocus"
-  },
-  {
     "key": "enter",
     "command": "workbench.action.tasks.runTask",
     "args": "explorer-select-file",
