@@ -89,7 +89,7 @@
   "terminal.integrated.profiles.osx": {
     "tmux-shell": {
       "path": "tmux",
-      "args": ["new-session", "-A", "-s", "vscode"]
+      "args": ["new-session", "-A", "-s", "vscode", "-c", "${workspaceFolder}"]
     }
   },
   // #endregion terminal
@@ -339,11 +339,11 @@
       "commands": ["workbench.files.action.focusOpenEditorsView"]
     },
     {
-      "before": ["<leader>", "w", "r"],
+      "before": ["<C-a>", "s"],
       "commands": ["projectManager.listProjects"]
     },
     {
-      "before": ["<leader>", "w", "s"],
+      "before": ["<C-a>", "w"],
       "commands": ["projectManager.saveProject"]
     },
     {
