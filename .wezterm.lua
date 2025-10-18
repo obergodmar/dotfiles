@@ -36,7 +36,7 @@ end
 
 -- Configs for Linux only
 if wezterm.target_triple == "x86_64-unknown-linux-gnu" then
-  config.font_size = 12
+  config.font_size = 11.5
   config.enable_wayland = false
 end
 
