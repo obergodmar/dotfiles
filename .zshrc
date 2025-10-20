@@ -12,7 +12,11 @@ path+=($HOME'/.cargo/bin')
 export PATH
 
 if [ -f "$HOME/.zshrc_overrides" ]; then
-	source "$HOME/.zshrc_overrides"
+        source "$HOME/.zshrc_overrides"
+fi
+
+if [ -f "$HOME/.venv/bin/activate" ]; then
+        source "$HOME/.venv/bin/activate"
 fi
 
 ZSH_THEME="obergodmar"
@@ -26,17 +30,17 @@ setopt histignoredups
 setopt ignoreeof
 
 if
-	[[ -f /usr/share/doc/fzf/examples/key-bindings.zsh ]] &&
-		[[ -f /usr/share/doc/fzf/examples/completion.zsh ]]
+        [[ -f /usr/share/doc/fzf/examples/key-bindings.zsh ]] &&
+                [[ -f /usr/share/doc/fzf/examples/completion.zsh ]]
 then
-	source /usr/share/doc/fzf/examples/key-bindings.zsh
-	source /usr/share/doc/fzf/examples/completion.zsh
+        source /usr/share/doc/fzf/examples/key-bindings.zsh
+        source /usr/share/doc/fzf/examples/completion.zsh
 elif [[ -f $HOME/.fzf.zsh ]]; then
-	source $HOME/.fzf.zsh
+        source $HOME/.fzf.zsh
 fi
 
 if [[ -f $HOME/.aliases ]]; then
-	source $HOME/.aliases
+        source $HOME/.aliases
 fi
 
 alias lg="lazygit"
@@ -45,19 +49,19 @@ alias vim="nvim"
 alias tmux="tmux -2"
 
 function rename_wezterm_title {
-	echo "\x1b]1337;SetUserVar=panetitle=$(echo -n $1 | base64)\x07"
+        echo "\x1b]1337;SetUserVar=panetitle=$(echo -n $1 | base64)\x07"
 }
 
 function change_wezterm_colorscheme {
-	echo "\033]1337;SetUserVar=colorscheme=$(echo -n "update" | base64)\007"
+        echo "\033]1337;SetUserVar=colorscheme=$(echo -n "update" | base64)\007"
 }
 
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
 if [[ -s "$HOME/.gvm/scripts/gvm" ]]; then
-	source "$HOME/.gvm/scripts/gvm"
-	gvm use default >/dev/null
+        source "$HOME/.gvm/scripts/gvm"
+        gvm use default >/dev/null
 fi
 
 [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
