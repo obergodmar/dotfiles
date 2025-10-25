@@ -3,4 +3,3 @@ vsync = true
 maximized = false
 idle = true
 fork = true
-frame = "transparent"
