@@ -17,6 +17,7 @@ set autoindent
 set history=1000
 set ignorecase
 set smartcase
+set visualbell " Disable beeping
 
 set ideajoin
 set idearefactormode=keep
