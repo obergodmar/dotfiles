@@ -99,6 +99,8 @@
     "*.nix": "nix"
   },
 
+  "extensions.ignoreRecommendations": true,
+
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "explorer.autoReveal": true,
