@@ -65,12 +65,13 @@ config.tab_bar_style = {
   }),
 }
 config.show_tab_index_in_tab_bar = true
+config.tab_bar_at_bottom = true
 config.hide_mouse_cursor_when_typing = false
 
 config.window_padding = {
   left = 12,
   right = 0,
-  top = 0,
+  top = 45,
   bottom = 0,
 }
 
@@ -112,9 +113,96 @@ end)
 --   window:set_config_overrides(overrides)
 -- end)
 
+wezterm.on("update-right-status", function(window)
+  local current = window:active_workspace()
+  local _, last = (wezterm.GLOBAL.ws_pair or ""):match("([^|]*)|(.*)")
+
+  if current ~= (last or "") then
+    wezterm.GLOBAL.ws_pair = string.format("%s|%s", last or "", current)
+  end
+
+  window:set_right_status(current)
+end)
+
+local function switch_workspace(window, pane, workspace, spawn)
+  if window:active_workspace() == workspace then
+    return
+  end
+  window:perform_action(act.SwitchToWorkspace({ name = workspace, spawn = spawn }), pane)
+end
+
+local function switch_to_previous_workspace(window, pane)
+  local prev, last = (wezterm.GLOBAL.ws_pair or ""):match("([^|]*)|(.*)")
+  if not prev or prev == "" or prev == last or not last or last == "" then
+    wezterm.log_info("No previous workspace to switch to")
+    return
+  end
+
+  switch_workspace(window, pane, prev)
+end
+
 config.keys = {
   { key = "{", mods = "SHIFT|ALT", action = act.MoveTabRelative(-1) },
   { key = "}", mods = "SHIFT|ALT", action = act.MoveTabRelative(1) },
+
+  {
+    key = "S",
+    mods = "ALT",
+    action = wezterm.action_callback(function(window, pane)
+      local home = wezterm.home_dir
+      local workspaces = {
+        { id = home .. "/Code", label = "code" },
+        { id = home .. "/dotfiles", label = "dotfiles" },
+        { id = home .. "/notes", label = "notes" },
+      }
+
+      window:perform_action(
+        act.InputSelector({
+          action = wezterm.action_callback(function(inner_window, inner_pane, id, label)
+            switch_workspace(inner_window, inner_pane, label, {
+              label = "Workspace: " .. label,
+              cwd = id,
+            })
+          end),
+          title = "Choose Workspace",
+          choices = workspaces,
+          fuzzy = true,
+          fuzzy_description = "Fuzzy find and/or make a workspace",
+        }),
+        pane
+      )
+    end),
+  },
+
+  { key = "s", mods = "ALT", action = wezterm.action.ShowLauncherArgs({ flags = "FUZZY|WORKSPACES" }) },
+
+  {
+    key = "a",
+    mods = "ALT",
+    action = wezterm.action_callback(switch_to_previous_workspace),
+  },
+  { key = "n", mods = "ALT", action = act.SwitchWorkspaceRelative(1) },
+  { key = "p", mods = "ALT", action = act.SwitchWorkspaceRelative(-1) },
+  {
+    key = "w",
+    mods = "ALT",
+    action = act.PromptInputLine({
+      description = wezterm.format({
+        { Attribute = { Intensity = "Bold" } },
+        { Text = "Enter name for new workspace" },
+      }),
+      action = wezterm.action_callback(function(window, pane, line)
+        -- line will be `nil` if they hit escape without entering anything
+        -- An empty string if they just hit enter
+        -- Or the actual line of text they wrote
+        if line then
+          switch_workspace(window, pane, line)
+        end
+      end),
+    }),
+  },
+
+  { key = "L", mods = "ALT", action = wezterm.action.ShowDebugOverlay },
 }
 
 return config
