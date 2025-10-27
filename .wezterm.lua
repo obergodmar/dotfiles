@@ -142,12 +142,15 @@ local function switch_to_previous_workspace(window, pane)
 end
 
 config.keys = {
-  { key = "{", mods = "SHIFT|ALT", action = act.MoveTabRelative(-1) },
-  { key = "}", mods = "SHIFT|ALT", action = act.MoveTabRelative(1) },
+  { key = '"', mods = "CTRL|SHIFT", action = act.SplitVertical({ domain = "CurrentPaneDomain" }) },
+  { key = "%", mods = "CTRL|SHIFT", action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
+
+  { key = "{", mods = "CTRL|SHIFT", action = act.MoveTabRelative(-1) },
+  { key = "}", mods = "CTRL|SHIFT", action = act.MoveTabRelative(1) },
 
   {
     key = "S",
-    mods = "ALT",
+    mods = "CTRL|SHIFT",
     action = wezterm.action_callback(function(window, pane)
       local home = wezterm.home_dir
       local workspaces = {
@@ -174,18 +177,18 @@ config.keys = {
     end),
   },
 
-  { key = "s", mods = "ALT", action = wezterm.action.ShowLauncherArgs({ flags = "FUZZY|WORKSPACES" }) },
+  { key = "s", mods = "CTRL", action = wezterm.action.ShowLauncherArgs({ flags = "FUZZY|WORKSPACES" }) },
 
   {
     key = "a",
-    mods = "ALT",
+    mods = "CTRL",
     action = wezterm.action_callback(switch_to_previous_workspace),
   },
-  { key = "n", mods = "ALT", action = act.SwitchWorkspaceRelative(1) },
-  { key = "p", mods = "ALT", action = act.SwitchWorkspaceRelative(-1) },
+  { key = "n", mods = "CTRL", action = act.SwitchWorkspaceRelative(1) },
+  { key = "p", mods = "CTRL", action = act.SwitchWorkspaceRelative(-1) },
   {
-    key = "w",
-    mods = "ALT",
+    key = "A",
+    mods = "CTRL|SHIFT",
     action = act.PromptInputLine({
       description = wezterm.format({
         { Attribute = { Intensity = "Bold" } },
@@ -202,7 +205,7 @@ config.keys = {
     }),
   },
 
-  { key = "L", mods = "ALT", action = wezterm.action.ShowDebugOverlay },
+  { key = "L", mods = "CTRL", action = wezterm.action.ShowDebugOverlay },
 }
 
 return config
