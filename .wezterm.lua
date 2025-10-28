@@ -43,35 +43,13 @@ end
 config.color_scheme = "Catppuccin Macchiato"
 config.use_fancy_tab_bar = false
 config.tab_max_width = 30
-config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
-config.tab_bar_style = {
-  window_hide = wezterm.format({
-    { Text = " _ " },
-  }),
-  window_hide_hover = wezterm.format({
-    { Text = " _ " },
-  }),
-  window_maximize = wezterm.format({
-    { Text = " [] " },
-  }),
-  window_maximize_hover = wezterm.format({
-    { Text = " [] " },
-  }),
-  window_close = wezterm.format({
-    { Text = " X " },
-  }),
-  window_close_hover = wezterm.format({
-    { Text = " X " },
-  }),
-}
 config.show_tab_index_in_tab_bar = true
-config.tab_bar_at_bottom = true
 config.hide_mouse_cursor_when_typing = false
 
 config.window_padding = {
-  left = 12,
+  left = 0,
   right = 0,
-  top = 45,
+  top = 0,
   bottom = 0,
 }
 
@@ -121,7 +99,7 @@ wezterm.on("update-right-status", function(window)
     wezterm.GLOBAL.ws_pair = string.format("%s|%s", last or "", current)
   end
 
-  window:set_right_status(current)
+  window:set_right_status(current .. " ")
 end)
 
 local function switch_workspace(window, pane, workspace, spawn)
