@@ -21,6 +21,24 @@
           "settings": {
             "foreground": "#f5a97f"
           }
+        },
+        {
+          "scope": ["support.type.primitive"],
+          "settings": {
+            "foreground": "#c6a0f6"
+          }
+        },
+        {
+          "scope": ["variable.other.property.ts"],
+          "settings": {
+            "foreground": "#b7bdf8"
+          }
+        },
+        {
+          "scope": ["variable.language.super.ts"],
+          "settings": {
+            "foreground": "#ed8796"
+          }
         }
       ]
     }
