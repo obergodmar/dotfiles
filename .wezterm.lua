@@ -119,16 +119,20 @@ local function switch_to_previous_workspace(window, pane)
   switch_workspace(window, pane, prev)
 end
 
+config.leader = { key = "a", mods = "CTRL" }
 config.keys = {
-  { key = '"', mods = "CTRL|SHIFT", action = act.SplitVertical({ domain = "CurrentPaneDomain" }) },
-  { key = "%", mods = "CTRL|SHIFT", action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
+  { key = '"', mods = "LEADER|SHIFT", action = act.SplitVertical({ domain = "CurrentPaneDomain" }) },
+  { key = "%", mods = "LEADER|SHIFT", action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
+
+  { key = "p", mods = "LEADER", action = act.ActivateTabRelative(-1) },
+  { key = "n", mods = "LEADER", action = act.ActivateTabRelative(1) },
 
   { key = "{", mods = "CTRL|SHIFT", action = act.MoveTabRelative(-1) },
   { key = "}", mods = "CTRL|SHIFT", action = act.MoveTabRelative(1) },
 
   {
     key = "S",
-    mods = "CTRL|SHIFT",
+    mods = "LEADER|SHIFT",
     action = wezterm.action_callback(function(window, pane)
       local home = wezterm.home_dir
       local workspaces = {
@@ -155,18 +159,18 @@ config.keys = {
     end),
   },
 
-  { key = "s", mods = "CTRL", action = wezterm.action.ShowLauncherArgs({ flags = "FUZZY|WORKSPACES" }) },
+  { key = "s", mods = "LEADER", action = wezterm.action.ShowLauncherArgs({ flags = "FUZZY|WORKSPACES" }) },
 
   {
     key = "a",
-    mods = "CTRL",
+    mods = "LEADER",
     action = wezterm.action_callback(switch_to_previous_workspace),
   },
   { key = "n", mods = "CTRL", action = act.SwitchWorkspaceRelative(1) },
   { key = "p", mods = "CTRL", action = act.SwitchWorkspaceRelative(-1) },
   {
-    key = "A",
-    mods = "CTRL|SHIFT",
+    key = "t",
+    mods = "LEADER",
     action = act.PromptInputLine({
       description = wezterm.format({
         { Attribute = { Intensity = "Bold" } },
