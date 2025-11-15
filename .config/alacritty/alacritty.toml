@@ -86,7 +86,7 @@ italic = { style = "Italic" }  # Inherits family from normal, Default style: Ita
 bold_italic = { style = "BoldItalic" }  # Inherits family from normal, Default style: Bold Italic
 
 # Font size in points
-size = 16  # Default: 11.25
+size = 14  # Default: 11.25
 
 # Offset is extra space around each character
 offset = { x = 0, y = 0 }  # Default: x = 0, y = 0
@@ -243,5 +243,6 @@ ipc_socket = true  # Default: true
 
 # Import additional configuration files
 import = [
-  "~/.config/alacritty/kanagawa.toml"
+  # "~/.config/alacritty/kanagawa.toml"
+  "~/.config/alacritty/catppuccin-macchiato.toml"
 ]
