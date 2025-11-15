@@ -33,6 +33,10 @@ source $ZSH/oh-my-zsh.sh
 setopt histignoredups
 setopt ignoreeof
 
+if command -v wezterm >/dev/null 2>&1; then
+  source <(wezterm shell-completion --shell zsh)
+fi
+
 if
   [[ -f /usr/share/doc/fzf/examples/key-bindings.zsh ]] &&
     [[ -f /usr/share/doc/fzf/examples/completion.zsh ]]

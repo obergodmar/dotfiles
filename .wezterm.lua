@@ -64,6 +64,8 @@ config.window_frame = {
 
 config.default_cursor_style = "SteadyBlock"
 
+config.exit_behavior = "Hold"
+
 wezterm.on("format-tab-title", function(tab)
   local tab_index = tab.tab_index + 1
   local tab_title = tab.active_pane.title
@@ -91,7 +93,7 @@ end)
 --   window:set_config_overrides(overrides)
 -- end)
 
-wezterm.on("update-right-status", function(window)
+wezterm.on("update-status", function(window)
   local current = window:active_workspace()
   local _, last = (wezterm.GLOBAL.ws_pair or ""):match("([^|]*)|(.*)")
 
@@ -126,9 +128,9 @@ end
 config.leader = { key = "a", mods = "CTRL" }
 config.keys = {
   { key = "c", mods = "LEADER", action = act.SpawnTab("CurrentPaneDomain") },
-    {
-    key = 'Tab',
-    mods = 'LEADER',
+  {
+    key = "Tab",
+    mods = "LEADER",
     action = wezterm.action.ActivateLastTab,
   },
 
@@ -162,6 +164,10 @@ config.keys = {
       window:perform_action(
         act.InputSelector({
           action = wezterm.action_callback(function(inner_window, inner_pane, id, label)
+            if not label then
+              return
+            end
+
             switch_workspace(inner_window, inner_pane, label, {
               label = "Workspace: " .. label,
               cwd = id,
