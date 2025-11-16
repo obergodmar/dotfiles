@@ -211,6 +211,12 @@ config.keys = {
     }),
   },
 
+  {
+    key = "q",
+    mods = "LEADER",
+    action = wezterm.action.CloseCurrentPane({ confirm = true }),
+  },
+
   { key = "L", mods = "LEADER", action = wezterm.action.ShowDebugOverlay },
 }
 
