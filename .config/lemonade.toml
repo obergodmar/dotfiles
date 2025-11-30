@@ -2,3 +2,4 @@ port = 2489
 allow = '127.0.0.1'
 host = '127.0.0.1'
 line-ending = 'lf'
+no-fallback-messages = true
