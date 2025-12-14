@@ -155,7 +155,6 @@
 
   "window.newWindowProfile": "Default",
   "window.density.editorTabHeight": "compact",
-  "window.commandCenter": false,
 
   "errorLens.fontWeight": "500",
   "errorLens.fontStyleItalic": true,
