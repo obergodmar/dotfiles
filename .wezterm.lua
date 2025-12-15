@@ -1,23 +1,22 @@
-local config = {}
-
 local wezterm = require("wezterm")
+
+local tabline = wezterm.plugin.require("https://github.com/michaelbrusegard/tabline.wez")
+local wez_tmux = wezterm.plugin.require("https://github.com/sei40kr/wez-tmux")
+
 local act = wezterm.action
+local c = wezterm.config_builder()
 
-if wezterm.config_builder then
-  config = wezterm.config_builder()
-end
+c.term = "xterm-256color"
+c.front_end = "WebGpu"
 
-config.term = "xterm-256color"
+c.underline_thickness = "300%"
+c.underline_position = "200%"
+c.font = wezterm.font({ family = "Iosevka Nerd Font", weight = "Medium" })
 
-config.underline_thickness = "300%"
-config.underline_position = "200%"
-config.font = wezterm.font({ family = "Iosevka Nerd Font", weight = "Medium" })
-
-config.front_end = "WebGpu"
-config.check_for_updates = false
-config.warn_about_missing_glyphs = false
-config.audible_bell = "Disabled"
-config.visual_bell = {
+c.check_for_updates = false
+c.warn_about_missing_glyphs = false
+c.audible_bell = "Disabled"
+c.visual_bell = {
   fade_in_duration_ms = 75,
   fade_out_duration_ms = 75,
   target = "CursorColor",
@@ -25,84 +24,40 @@ config.visual_bell = {
 
 -- Configs for Windows only
 if wezterm.target_triple == "x86_64-pc-windows-msvc" then
-  config.default_prog = { "pwsh.exe", "-nologo", "-WorkingDirectory", "~" }
-  config.font_size = 10.8
+  c.default_prog = { "pwsh.exe", "-nologo", "-WorkingDirectory", "~" }
+  c.font_size = 10.8
 end
 
 -- Configs for OSX only
 if wezterm.target_triple == "x86_64-apple-darwin" or wezterm.target_triple == "aarch64-apple-darwin" then
-  config.font_size = 14
+  c.font_size = 14
 end
 
 -- Configs for Linux only
 if wezterm.target_triple == "x86_64-unknown-linux-gnu" then
-  config.font_size = 11.5
-  config.enable_wayland = true
+  c.font_size = 11.5
+  c.enable_wayland = true
 end
 
-config.color_scheme = "Catppuccin Macchiato"
-config.use_fancy_tab_bar = false
-config.tab_max_width = 30
-config.show_tab_index_in_tab_bar = true
-config.hide_mouse_cursor_when_typing = false
+c.color_scheme = "Catppuccin Macchiato"
+c.hide_mouse_cursor_when_typing = false
 
-config.window_padding = {
+c.window_padding = {
   left = 0,
   right = 0,
   top = 0,
   bottom = 0,
 }
-
-config.window_frame = {
-  font = config.font,
-  font_size = config.font_size,
+c.window_frame = {
+  font = c.font,
+  font_size = c.font_size,
   border_left_width = "0.25cell",
   border_right_width = "0.25cell",
   border_bottom_height = "0.1cell",
   border_top_height = "0.1cell",
 }
-
-config.default_cursor_style = "SteadyBlock"
-
-config.exit_behavior = "Hold"
-
-wezterm.on("format-tab-title", function(tab)
-  local tab_index = tab.tab_index + 1
-  local tab_title = tab.active_pane.title
-  local user_title = tab.active_pane.user_vars.panetitle
-
-  if user_title ~= nil and #user_title > 0 then
-    tab_title = user_title
-  end
-
-  return {
-    { Text = " " .. tab_index .. ": " .. tab_title .. " " },
-  }
-end)
-
--- wezterm.on("user-var-changed", function(window, _, name, value)
---   local overrides = window:get_config_overrides() or {}
---   if name == "colorscheme" and value == "update" then
---     if not overrides.color_scheme or overrides.color_scheme == "kanagawa-wave" then
---       overrides.color_scheme = "kanagawa-lotus"
---     else
---       overrides.color_scheme = "kanagawa-wave"
---     end
---   end
-
---   window:set_config_overrides(overrides)
--- end)
-
-wezterm.on("update-status", function(window)
-  local current = window:active_workspace()
-  local _, last = (wezterm.GLOBAL.ws_pair or ""):match("([^|]*)|(.*)")
-
-  if current ~= (last or "") then
-    wezterm.GLOBAL.ws_pair = string.format("%s|%s", last or "", current)
-  end
-
-  window:set_right_status(current .. " ")
-end)
+c.default_cursor_style = "SteadyBlock"
+c.exit_behavior = "Hold"
 
 local function switch_workspace(window, pane, workspace, spawn)
   if window:active_workspace() == workspace then
@@ -121,77 +76,13 @@ local function switch_to_previous_workspace(window, pane)
   switch_workspace(window, pane, prev)
 end
 
-local function mapTmuxLikeKeys(goToIndex)
-  return { key = tostring(goToIndex), mods = "LEADER", action = act.ActivateTab(goToIndex - 1) }
-end
-
-config.leader = { key = "a", mods = "CTRL" }
-config.keys = {
-  { key = "c", mods = "LEADER", action = act.SpawnTab("CurrentPaneDomain") },
+c.leader = { key = "a", mods = "CTRL" }
+c.keys = {
   {
-    key = "Tab",
-    mods = "LEADER",
-    action = wezterm.action.ActivateLastTab,
-  },
-
-  { key = '"', mods = "LEADER|SHIFT", action = act.SplitVertical({ domain = "CurrentPaneDomain" }) },
-  { key = "%", mods = "LEADER|SHIFT", action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
-
-  { key = "{", mods = "LEADER|SHIFT", action = act.MoveTabRelative(-1) },
-  { key = "}", mods = "LEADER|SHIFT", action = act.MoveTabRelative(1) },
-
-  { key = "UpArrow", mods = "CTRL|SHIFT|ALT", action = act.AdjustPaneSize({ "Up", 5 }) },
-  { key = "RightArrow", mods = "CTRL|SHIFT|ALT", action = act.AdjustPaneSize({ "Right", 5 }) },
-  { key = "DownArrow", mods = "CTRL|SHIFT|ALT", action = act.AdjustPaneSize({ "Down", 5 }) },
-  { key = "LeftArrow", mods = "CTRL|SHIFT|ALT", action = act.AdjustPaneSize({ "Left", 5 }) },
-
-  { key = "UpArrow", mods = "LEADER", action = act.ActivatePaneDirection("Up") },
-  { key = "RightArrow", mods = "LEADER", action = act.ActivatePaneDirection("Right") },
-  { key = "DownArrow", mods = "LEADER", action = act.ActivatePaneDirection("Down") },
-  { key = "LeftArrow", mods = "LEADER", action = act.ActivatePaneDirection("Left") },
-
-  {
-    key = "S",
+    key = "s",
     mods = "LEADER|SHIFT",
-    action = wezterm.action_callback(function(window, pane)
-      local home = wezterm.home_dir
-      local workspaces = {
-        { id = home .. "/Code", label = "code" },
-        { id = home .. "/dotfiles", label = "dotfiles" },
-        { id = home .. "/notes", label = "notes" },
-      }
-
-      window:perform_action(
-        act.InputSelector({
-          action = wezterm.action_callback(function(inner_window, inner_pane, id, label)
-            if not label then
-              return
-            end
-
-            switch_workspace(inner_window, inner_pane, label, {
-              label = "Workspace: " .. label,
-              cwd = id,
-            })
-          end),
-          title = "Choose Workspace",
-          choices = workspaces,
-          fuzzy = true,
-          fuzzy_description = "Fuzzy find and/or make a workspace",
-        }),
-        pane
-      )
-    end),
-  },
-
-  { key = "s", mods = "LEADER", action = wezterm.action.ShowLauncherArgs({ flags = "FUZZY|WORKSPACES" }) },
-
-  {
-    key = "a",
-    mods = "LEADER",
     action = wezterm.action_callback(switch_to_previous_workspace),
   },
-  { key = "n", mods = "LEADER", action = act.SwitchWorkspaceRelative(1) },
-  { key = "p", mods = "LEADER", action = act.SwitchWorkspaceRelative(-1) },
   {
     key = "C",
     mods = "LEADER|SHIFT",
@@ -210,18 +101,39 @@ config.keys = {
       end),
     }),
   },
-
-  {
-    key = "q",
-    mods = "LEADER",
-    action = wezterm.action.CloseCurrentPane({ confirm = true }),
-  },
-
   { key = "L", mods = "LEADER", action = wezterm.action.ShowDebugOverlay },
 }
 
-for i = 1, 9, 1 do
-  table.insert(config.keys, mapTmuxLikeKeys(i))
-end
+tabline.setup({
+  options = {
+    icons_enabled = true,
+    theme = c.color_scheme,
+    tabs_enabled = true,
+    theme_overrides = {},
+    section_separators = "",
+    component_separators = "",
+    tab_separators = "",
+  },
+  sections = {
+    tabline_a = { "mode" },
+    tabline_b = { "workspace" },
+    tabline_c = { " " },
+    tab_active = {
+      "index",
+      { "parent", padding = 0 },
+      "/",
+      { "cwd", padding = { left = 0, right = 1 } },
+      { "zoomed", padding = 0 },
+    },
+    tab_inactive = { "index", { "process", padding = { left = 0, right = 1 } } },
+    tabline_x = { "ram", "cpu" },
+    tabline_y = { "datetime", "battery" },
+    tabline_z = { "hostname" },
+  },
+  extensions = {},
+})
 
-return config
+wez_tmux.apply_to_config(c, {})
+tabline.apply_to_config(c)
+
+return c
