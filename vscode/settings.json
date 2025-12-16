@@ -45,6 +45,8 @@
   },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.inlineSuggest.fontFamily": "Iosevka Nerd Font",
+  "editor.inlayHints.fontFamily": "Iosevka Nerd Font",
+  "editor.codeLensFontFamily": "Iosevka Nerd Font",
   "editor.fontLigatures": true,
   "editor.fontFamily": "Iosevka Nerd Font",
   "editor.fontWeight": 450,
