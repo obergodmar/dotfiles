@@ -1,4 +1,5 @@
 {
+  "update.mode": "manual",
   // #region editor
   "editor.semanticTokenColorCustomizations": {
     "[Catppuccin Macchiato]": {
