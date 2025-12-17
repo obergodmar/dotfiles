@@ -104,6 +104,15 @@ c.keys = {
   { key = "L", mods = "LEADER", action = wezterm.action.ShowDebugOverlay },
 }
 
+wezterm.on("update-status", function(window)
+  local current = window:active_workspace()
+  local _, last = (wezterm.GLOBAL.ws_pair or ""):match("([^|]*)|(.*)")
+
+  if current ~= (last or "") then
+    wezterm.GLOBAL.ws_pair = string.format("%s|%s", last or "", current)
+  end
+end)
+
 tabline.setup({
   options = {
     icons_enabled = true,
