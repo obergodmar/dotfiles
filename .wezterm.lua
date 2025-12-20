@@ -22,23 +22,6 @@ c.visual_bell = {
   target = "CursorColor",
 }
 
--- Configs for Windows only
-if wezterm.target_triple == "x86_64-pc-windows-msvc" then
-  c.default_prog = { "pwsh.exe", "-nologo", "-WorkingDirectory", "~" }
-  c.font_size = 10.8
-end
-
--- Configs for OSX only
-if wezterm.target_triple == "x86_64-apple-darwin" or wezterm.target_triple == "aarch64-apple-darwin" then
-  c.font_size = 14
-end
-
--- Configs for Linux only
-if wezterm.target_triple == "x86_64-unknown-linux-gnu" then
-  c.font_size = 11.5
-  c.enable_wayland = true
-end
-
 c.color_scheme = "Catppuccin Macchiato"
 c.hide_mouse_cursor_when_typing = false
 
@@ -144,5 +127,23 @@ tabline.setup({
 
 wez_tmux.apply_to_config(c, {})
 tabline.apply_to_config(c)
+
+-- Configs for Windows only
+if wezterm.target_triple == "x86_64-pc-windows-msvc" then
+  c.default_prog = { "pwsh.exe", "-nologo", "-WorkingDirectory", "~" }
+  c.font_size = 10.8
+end
+
+-- Configs for OSX only
+if wezterm.target_triple == "x86_64-apple-darwin" or wezterm.target_triple == "aarch64-apple-darwin" then
+  c.font_size = 14
+end
+
+-- Configs for Linux only
+if wezterm.target_triple == "x86_64-unknown-linux-gnu" then
+  c.font_size = 11.5
+  c.enable_wayland = true
+  c.window_decorations = "TITLE|RESIZE";
+end
 
 return c
