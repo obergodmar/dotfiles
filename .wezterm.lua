@@ -1,6 +1,6 @@
 local wezterm = require("wezterm")
 
-local tabline = wezterm.plugin.require("https://github.com/michaelbrusegard/tabline.wez")
+local tabline = wezterm.plugin.require("https://github.com/obergodmar/tabline.wez")
 local wez_tmux = wezterm.plugin.require("https://github.com/sei40kr/wez-tmux")
 
 local act = wezterm.action
@@ -119,7 +119,7 @@ tabline.setup({
     },
     tab_inactive = { "index", { "process", padding = { left = 0, right = 1 } } },
     tabline_x = { "ram", "cpu" },
-    tabline_y = { "battery" },
+    tabline_y = { "battery", "uptime" },
     tabline_z = { "hostname", "domain" },
   },
   extensions = {},
@@ -143,7 +143,7 @@ end
 if wezterm.target_triple == "x86_64-unknown-linux-gnu" then
   c.font_size = 11.5
   c.enable_wayland = true
-  c.window_decorations = "TITLE|RESIZE";
+  c.window_decorations = "TITLE|RESIZE"
 end
 
 return c
