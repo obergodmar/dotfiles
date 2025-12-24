@@ -2,6 +2,7 @@ local wezterm = require("wezterm")
 
 local tabline = wezterm.plugin.require("https://github.com/obergodmar/tabline.wez")
 local wez_tmux = wezterm.plugin.require("https://github.com/sei40kr/wez-tmux")
+local resurrect = wezterm.plugin.require("https://github.com/MLFlexer/resurrect.wezterm")
 
 local act = wezterm.action
 local c = wezterm.config_builder()
@@ -84,8 +85,82 @@ c.keys = {
       end),
     }),
   },
+  {
+    key = "s",
+    mods = "ALT",
+    action = wezterm.action_callback(function()
+      resurrect.state_manager.save_state(resurrect.workspace_state.get_workspace_state())
+      resurrect.window_state.save_window_action()
+      resurrect.tab_state.save_tab_action()
+    end),
+  },
+  {
+    key = "r",
+    mods = "ALT",
+    action = wezterm.action_callback(function(win, pane)
+      resurrect.fuzzy_loader.fuzzy_load(win, pane, function(id)
+        local type = string.match(id, "^([^/]+)") -- match before '/'
+        id = string.match(id, "([^/]+)$") -- match after '/'
+        id = string.match(id, "(.+)%..+$") -- remove file extention
+        local opts = {
+          relative = true,
+          restore_text = true,
+          close_open_tabs = true,
+          window = pane:window(),
+          spawn_in_workspace = false,
+          resize_window = false,
+        }
+        if type == "workspace" then
+          local state = resurrect.state_manager.load_state(id, "workspace")
+          win:perform_action(
+            wezterm.action.SwitchToWorkspace({
+              name = state.workspace,
+            }),
+            pane
+          )
+          resurrect.workspace_state.restore_workspace(state, opts)
+        elseif type == "window" then
+          local state = resurrect.state_manager.load_state(id, "window")
+          resurrect.window_state.restore_window(pane:window(), state, opts)
+        elseif type == "tab" then
+          local state = resurrect.state_manager.load_state(id, "tab")
+          resurrect.tab_state.restore_tab(pane:tab(), state, opts)
+        end
+      end, { ignore_tabs = true, ignore_windows = true, show_state_with_date = true })
+    end),
+  },
+  {
+    key = "d",
+    mods = "ALT",
+    action = wezterm.action_callback(function(win, pane)
+      resurrect.fuzzy_loader.fuzzy_load(win, pane, function(id)
+        resurrect.state_manager.delete_state(id)
+      end, {
+        title = "Delete State",
+        description = "Select State to Delete and press Enter = accept, Esc = cancel, / = filter",
+        fuzzy_description = "Search State to Delete: ",
+        fmt_workspace = function(label)
+          return wezterm.format({
+            { Foreground = { AnsiColor = "Red" } },
+            { Text = "󱂬 : " .. label:gsub("(.*)%.json(.*)", "%1%2") },
+          })
+        end,
+        is_fuzzy = true,
+        ignore_tabs = true,
+        ignore_windows = true,
+        show_state_with_date = true,
+      })
+    end),
+  },
   { key = "L", mods = "LEADER", action = wezterm.action.ShowDebugOverlay },
 }
+
+resurrect.state_manager.periodic_save({
+  interval_seconds = 10,
+  save_workspaces = true,
+  save_windows = true,
+  save_tabs = true,
+})
 
 wezterm.on("update-status", function(window)
   local current = window:active_workspace()
