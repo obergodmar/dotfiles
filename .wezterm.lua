@@ -137,6 +137,7 @@ end
 -- Configs for OSX only
 if wezterm.target_triple == "x86_64-apple-darwin" or wezterm.target_triple == "aarch64-apple-darwin" then
   c.font_size = 14
+  c.window_decorations = "TITLE|RESIZE"
 end
 
 -- Configs for Linux only
