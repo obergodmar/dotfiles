@@ -60,6 +60,18 @@ local function switch_to_previous_workspace(window, pane)
   switch_workspace(window, pane, prev)
 end
 
+---@param workspace string
+---@return MuxWindow
+local function get_current_mux_window(workspace)
+  for _, mux_win in ipairs(wezterm.mux.all_windows()) do
+    if mux_win:get_workspace() == workspace then
+      return mux_win
+    end
+  end
+
+  error("Could not find a workspace with the name: " .. workspace)
+end
+
 c.leader = { key = "a", mods = "CTRL" }
 c.keys = {
   {
@@ -90,8 +102,6 @@ c.keys = {
     mods = "ALT",
     action = wezterm.action_callback(function()
       resurrect.state_manager.save_state(resurrect.workspace_state.get_workspace_state())
-      resurrect.window_state.save_window_action()
-      resurrect.tab_state.save_tab_action()
     end),
   },
   {
@@ -102,14 +112,7 @@ c.keys = {
         local type = string.match(id, "^([^/]+)") -- match before '/'
         id = string.match(id, "([^/]+)$") -- match after '/'
         id = string.match(id, "(.+)%..+$") -- remove file extention
-        local opts = {
-          relative = true,
-          restore_text = true,
-          close_open_tabs = true,
-          window = pane:window(),
-          spawn_in_workspace = false,
-          resize_window = false,
-        }
+
         if type == "workspace" then
           local state = resurrect.state_manager.load_state(id, "workspace")
           win:perform_action(
@@ -118,13 +121,17 @@ c.keys = {
             }),
             pane
           )
+
+          local opts = {
+            relative = true,
+            restore_text = true,
+            close_open_tabs = true,
+            window = get_current_mux_window(wezterm.mux.get_active_workspace()),
+            spawn_in_workspace = false,
+            resize_window = false,
+          }
+
           resurrect.workspace_state.restore_workspace(state, opts)
-        elseif type == "window" then
-          local state = resurrect.state_manager.load_state(id, "window")
-          resurrect.window_state.restore_window(pane:window(), state, opts)
-        elseif type == "tab" then
-          local state = resurrect.state_manager.load_state(id, "tab")
-          resurrect.tab_state.restore_tab(pane:tab(), state, opts)
         end
       end, { ignore_tabs = true, ignore_windows = true, show_state_with_date = true })
     end),
@@ -154,13 +161,6 @@ c.keys = {
   },
   { key = "L", mods = "LEADER", action = wezterm.action.ShowDebugOverlay },
 }
-
-resurrect.state_manager.periodic_save({
-  interval_seconds = 10,
-  save_workspaces = true,
-  save_windows = true,
-  save_tabs = true,
-})
 
 wezterm.on("update-status", function(window)
   local current = window:active_workspace()
