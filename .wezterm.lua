@@ -9,6 +9,8 @@ local c = wezterm.config_builder()
 
 c.term = "xterm-256color"
 c.front_end = "WebGpu"
+c.max_fps = 255
+c.status_update_interval = 3000
 
 c.underline_thickness = "300%"
 c.underline_position = "200%"
@@ -200,8 +202,8 @@ tabline.setup({
   extensions = {},
 })
 
-wez_tmux.apply_to_config(c, {})
 tabline.apply_to_config(c)
+wez_tmux.apply_to_config(c, {})
 
 -- Configs for Windows only
 if wezterm.target_triple == "x86_64-pc-windows-msvc" then
