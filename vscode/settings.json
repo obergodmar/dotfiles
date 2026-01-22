@@ -121,6 +121,8 @@
   },
 
   "extensions.ignoreRecommendations": true,
+  "extensions.autoCheckUpdates": false,
+  "extensions.autoUpdate": false,
 
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
