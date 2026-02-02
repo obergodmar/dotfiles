@@ -161,6 +161,7 @@ c.keys = {
       })
     end),
   },
+  { key = "a", mods = "LEADER", action = act.ActivateLastTab },
   { key = "L", mods = "LEADER", action = wezterm.action.ShowDebugOverlay },
 }
 
