@@ -220,7 +220,7 @@ end
 
 -- Configs for Linux only
 if wezterm.target_triple == "x86_64-unknown-linux-gnu" then
-  c.font_size = 11.5
+  c.font_size = 10.8
   c.enable_wayland = true
   c.window_decorations = "TITLE|RESIZE"
 end
