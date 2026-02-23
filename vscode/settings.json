@@ -206,6 +206,8 @@
   "gitlens.launchpad.indicator.enabled": false,
   "gitlens.currentLine.fontWeight": "500",
   "gitlens.codeLens.enabled": false,
+  "gitlens.ai.model": "vscode",
+  "gitlens.ai.vscode.model": "copilot:gpt-5.3-codex",
 
   "github.copilot.nextEditSuggestions.enabled": true,
 
