@@ -7,6 +7,11 @@ local resurrect = wezterm.plugin.require("https://github.com/MLFlexer/resurrect.
 local act = wezterm.action
 local c = wezterm.config_builder()
 
+local target_triple = wezterm.target_triple
+local is_windows = target_triple == "x86_64-pc-windows-msvc"
+local is_macos = target_triple == "x86_64-apple-darwin" or target_triple == "aarch64-apple-darwin"
+local is_linux = target_triple == "x86_64-unknown-linux-gnu"
+
 c.term = "xterm-256color"
 c.front_end = "WebGpu"
 c.max_fps = 255
@@ -196,7 +201,10 @@ tabline.setup({
       { "zoomed", padding = 0 },
     },
     tab_inactive = { "index", { "process", padding = { left = 0, right = 1 } } },
-    tabline_x = { "ram", "cpu" },
+    tabline_x = {
+      { "ram", use_pwsh = is_windows },
+      { "cpu", use_pwsh = is_windows },
+    },
     tabline_y = { "battery", "uptime" },
     tabline_z = { "hostname", "domain" },
   },
@@ -209,18 +217,18 @@ wez_tmux.apply_to_config(c, {})
 c.window_decorations = "TITLE|RESIZE"
 
 -- Configs for Windows only
-if wezterm.target_triple == "x86_64-pc-windows-msvc" then
+if is_windows then
   c.default_prog = { "pwsh.exe", "-nologo", "-WorkingDirectory", "~" }
   c.font_size = 10.8
 end
 
 -- Configs for OSX only
-if wezterm.target_triple == "x86_64-apple-darwin" or wezterm.target_triple == "aarch64-apple-darwin" then
+if is_macos then
   c.font_size = 14
 end
 
 -- Configs for Linux only
-if wezterm.target_triple == "x86_64-unknown-linux-gnu" then
+if is_linux then
   c.font_size = 10.8
   c.enable_wayland = true
 end
