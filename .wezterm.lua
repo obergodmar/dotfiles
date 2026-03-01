@@ -206,6 +206,8 @@ tabline.setup({
 tabline.apply_to_config(c)
 wez_tmux.apply_to_config(c, {})
 
+c.window_decorations = "TITLE|RESIZE"
+
 -- Configs for Windows only
 if wezterm.target_triple == "x86_64-pc-windows-msvc" then
   c.default_prog = { "pwsh.exe", "-nologo", "-WorkingDirectory", "~" }
@@ -215,14 +217,12 @@ end
 -- Configs for OSX only
 if wezterm.target_triple == "x86_64-apple-darwin" or wezterm.target_triple == "aarch64-apple-darwin" then
   c.font_size = 14
-  c.window_decorations = "TITLE|RESIZE"
 end
 
 -- Configs for Linux only
 if wezterm.target_triple == "x86_64-unknown-linux-gnu" then
   c.font_size = 10.8
   c.enable_wayland = true
-  c.window_decorations = "TITLE|RESIZE"
 end
 
 return c
