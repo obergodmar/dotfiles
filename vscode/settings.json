@@ -157,7 +157,6 @@
 
   "window.newWindowProfile": "Default",
   "window.density.editorTabHeight": "compact",
-  "window.menuBarVisibility": "compact",
 
   "errorLens.fontWeight": "500",
   "errorLens.fontStyleItalic": true,
