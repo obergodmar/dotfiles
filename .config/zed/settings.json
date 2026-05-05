@@ -1,33 +1,33 @@
-// Zed settings
-//
-// For information on how to configure Zed, see the Zed
-// documentation: https://zed.dev/docs/configuring-zed
-//
-// To see all of Zed's default settings without changing your
-// custom settings, run `zed: open default settings` from the
-// command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "auto_update": false,
+  "base_keymap": "VSCode",
   "vim_mode": true,
   "vim": {
-    "use_smartcase_find": true
+    "use_system_clipboard": "always",
+    "use_smartcase_find": true,
+    "toggle_relative_line_numbers": false
   },
   "telemetry": {
     "diagnostics": false,
     "metrics": false
   },
-  "base_keymap": "VSCode",
+  "load_direnv": "shell_hook",
+  "semantic_tokens": "combined",
+  "show_whitespaces": "trailing",
+  "relative_line_numbers": true,
+  "remove_trailing_whitespace_on_save": true,
+  "ensure_final_newline_on_save": true,
+  "format_on_save": "on",
+  "code_lens": "off",
+  "soft_wrap": "none",
   "minimap": {
-    "show": "auto"
+    "show": "never"
   },
-  "file_types": {},
-  "icon_theme": "Catppuccin Macchiato",
   "ui_font_size": 14,
   "ui_font_features": {
     "lida": true,
     "calt": true
   },
-  "relative_line_numbers": true,
-  "show_whitespaces": "trailing",
   "buffer_font_size": 14,
   "buffer_font_family": "Iosevka Nerd Font",
   "buffer_font_weight": 450,
@@ -35,7 +35,22 @@
   "theme": {
     "mode": "dark",
     "light": "Catppuccin Latte",
+    "dark": "Catppuccin Macchiato (lavender)"
+  },
+  "icon_theme": {
+    "mode": "dark",
+    "light": "Catppuccin Latte",
     "dark": "Catppuccin Macchiato"
+  },
+  "auto_install_extensions": {
+    "catppuccin": true,
+    "catppuccin-icons": true,
+    "cspell": true,
+    "html": true,
+    "lua": true,
+    "markdown-oxide": true,
+    "marksman": true,
+    "nix": true
   },
   "inlay_hints": {
     "enabled": true,
@@ -48,5 +63,290 @@
     "file_icons": true,
     "git_status": true,
     "show_diagnostics": "all"
+  },
+  "terminal": {
+    "alternate_scroll": "off",
+    "blinking": "off",
+    "copy_on_select": true,
+    "dock": "bottom",
+    "font_family": "Iosevka Nerd Font",
+    "font_size": 14,
+    "line_height": "comfortable",
+    "shell": "system",
+    "working_directory": "current_project_directory"
+  },
+  "node": {
+    "path_lookup": true
+  },
+  "agent_servers": {
+    "claude-acp": {
+      "type": "registry"
+    },
+    "codex-acp": {
+      "type": "registry"
+    }
+  },
+  "lsp": {
+    "bash-language-server": {
+      "binary": {
+        "path_lookup": true
+      }
+    },
+    "cspell": {
+      "settings": {
+        "cSpell": {
+          "language": "en,ru",
+          "globalSettings": true
+        }
+      }
+    },
+    "eslint": {
+      "binary": {
+        "path_lookup": true
+      },
+      "settings": {
+        "codeActionOnSave": {
+          "enable": true
+        },
+        "problems": {
+          "shortenToSingleLine": true
+        },
+        "workingDirectory": {
+          "mode": "auto"
+        }
+      }
+    },
+    "lua-language-server": {
+      "binary": {
+        "path_lookup": true
+      },
+      "settings": {
+        "Lua": {
+          "codeLens": {
+            "enable": true
+          },
+          "hint": {
+            "enable": true
+          },
+          "workspace": {
+            "checkThirdParty": "Disable"
+          }
+        }
+      }
+    },
+    "marksman": {
+      "binary": {
+        "path_lookup": true
+      }
+    },
+    "nix": {
+      "binary": {
+        "path_lookup": true
+      },
+      "settings": {
+        "nixd": {
+          "formatting": {
+            "command": ["nixfmt"]
+          }
+        }
+      }
+    },
+    "tailwindcss-language-server": {
+      "binary": {
+        "path_lookup": true
+      }
+    },
+    "typescript-language-server": {
+      "binary": {
+        "path_lookup": true
+      },
+      "initialization_options": {
+        "preferences": {
+          "includeInlayParameterNameHints": "all",
+          "includeInlayParameterNameHintsWhenArgumentMatchesName": true,
+          "includeInlayFunctionParameterTypeHints": false,
+          "includeInlayVariableTypeHints": false,
+          "includeInlayVariableTypeHintsWhenTypeMatchesName": false,
+          "includeInlayPropertyDeclarationTypeHints": false,
+          "includeInlayFunctionLikeReturnTypeHints": false,
+          "includeInlayEnumMemberValueHints": false
+        }
+      }
+    },
+    "vtsls": {
+      "binary": {
+        "path_lookup": true
+      },
+      "settings": {
+        "javascript": {
+          "inlayHints": {
+            "parameterNames": {
+              "enabled": "all",
+              "suppressWhenArgumentMatchesName": true
+            },
+            "parameterTypes": {
+              "enabled": false
+            },
+            "variableTypes": {
+              "enabled": false
+            },
+            "propertyDeclarationTypes": {
+              "enabled": false
+            },
+            "functionLikeReturnTypes": {
+              "enabled": false
+            },
+            "enumMemberValues": {
+              "enabled": false
+            }
+          },
+          "tsserver": {
+            "maxTsServerMemory": 4096
+          }
+        },
+        "typescript": {
+          "inlayHints": {
+            "parameterNames": {
+              "enabled": "all",
+              "suppressWhenArgumentMatchesName": true
+            },
+            "parameterTypes": {
+              "enabled": false
+            },
+            "variableTypes": {
+              "enabled": false
+            },
+            "propertyDeclarationTypes": {
+              "enabled": false
+            },
+            "functionLikeReturnTypes": {
+              "enabled": false
+            },
+            "enumMemberValues": {
+              "enabled": false
+            }
+          },
+          "tsserver": {
+            "maxTsServerMemory": 4096
+          }
+        }
+      }
+    },
+    "vscode-css-language-server": {
+      "binary": {
+        "path_lookup": true
+      }
+    },
+    "vscode-html-language-server": {
+      "binary": {
+        "path_lookup": true
+      }
+    },
+    "yaml-language-server": {
+      "binary": {
+        "path_lookup": true
+      },
+      "settings": {
+        "yaml": {
+          "format": {
+            "singleQuote": false
+          },
+          "schemaStore": {
+            "enable": true
+          },
+          "validate": true
+        }
+      }
+    }
+  },
+  "languages": {
+    "CSS": {
+      "language_servers": [
+        "vscode-css-language-server",
+        "tailwindcss-language-server",
+        "cspell",
+        "..."
+      ]
+    },
+    "HTML": {
+      "language_servers": [
+        "vscode-html-language-server",
+        "tailwindcss-language-server",
+        "cspell",
+        "..."
+      ]
+    },
+    "JavaScript": {
+      "language_servers": ["vtsls", "eslint", "cspell", "..."],
+      "code_actions_on_format": {
+        "source.fixAll.eslint": true
+      }
+    },
+    "JSX": {
+      "language_servers": [
+        "vtsls",
+        "eslint",
+        "tailwindcss-language-server",
+        "cspell",
+        "..."
+      ],
+      "code_actions_on_format": {
+        "source.fixAll.eslint": true
+      }
+    },
+    "Lua": {
+      "language_servers": ["lua-language-server", "cspell", "..."],
+      "formatter": "language_server",
+      "inlay_hints": {
+        "enabled": true,
+        "show_parameter_hints": true,
+        "show_type_hints": true,
+        "show_other_hints": true
+      }
+    },
+    "Markdown": {
+      "language_servers": ["marksman", "markdown-oxide", "cspell", "..."],
+      "format_on_save": "on"
+    },
+    "Nix": {
+      "language_servers": ["nix", "cspell", "..."],
+      "formatter": {
+        "external": {
+          "command": "nixfmt",
+          "arguments": ["--filename", "{buffer_path}"]
+        }
+      }
+    },
+    "Shell Script": {
+      "language_servers": ["bash-language-server", "cspell", "..."],
+      "formatter": {
+        "external": {
+          "command": "shfmt",
+          "arguments": ["--filename", "{buffer_path}", "--indent", "2"]
+        }
+      }
+    },
+    "TSX": {
+      "language_servers": [
+        "vtsls",
+        "eslint",
+        "tailwindcss-language-server",
+        "cspell",
+        "..."
+      ],
+      "code_actions_on_format": {
+        "source.fixAll.eslint": true
+      }
+    },
+    "TypeScript": {
+      "language_servers": ["vtsls", "eslint", "cspell", "..."],
+      "code_actions_on_format": {
+        "source.fixAll.eslint": true
+      }
+    },
+    "YAML": {
+      "language_servers": ["yaml-language-server", "cspell", "..."],
+      "formatter": "language_server"
+    }
   }
 }
