@@ -78,14 +78,6 @@
   "node": {
     "path_lookup": true
   },
-  "agent_servers": {
-    "claude-acp": {
-      "type": "registry"
-    },
-    "codex-acp": {
-      "type": "registry"
-    }
-  },
   "lsp": {
     "bash-language-server": {
       "binary": {

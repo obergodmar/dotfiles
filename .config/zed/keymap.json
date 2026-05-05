@@ -20,7 +20,7 @@
       "alt-down": "vim::ResizePaneDown",
       "alt-up": "vim::ResizePaneUp",
       "alt-right": "vim::ResizePaneRight",
-      "enter": "vim::SearchUnderCursor",
+      "enter": ["workspace::SendKeystrokes", "*"],
       "space f": "editor::Format",
       "space F": "project_panel::ToggleFocus",
       "space tab": "workspace::ToggleLeftDock",
