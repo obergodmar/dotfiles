@@ -12,18 +12,16 @@
     "metrics": false
   },
   "load_direnv": "shell_hook",
-  "semantic_tokens": "combined",
   "show_whitespaces": "trailing",
   "relative_line_numbers": true,
   "remove_trailing_whitespace_on_save": true,
   "ensure_final_newline_on_save": true,
   "format_on_save": "on",
-  "code_lens": "off",
   "soft_wrap": "none",
   "minimap": {
     "show": "never"
   },
-  "ui_font_size": 14,
+  "ui_font_size": 16.5,
   "ui_font_features": {
     "lida": true,
     "calt": true
@@ -75,14 +73,10 @@
     "shell": "system",
     "working_directory": "current_project_directory"
   },
-  "node": {
-    "path_lookup": true
-  },
+  "node": {},
   "lsp": {
     "bash-language-server": {
-      "binary": {
-        "path_lookup": true
-      }
+      "binary": {}
     },
     "cspell": {
       "settings": {
@@ -93,9 +87,7 @@
       }
     },
     "eslint": {
-      "binary": {
-        "path_lookup": true
-      },
+      "binary": {},
       "settings": {
         "codeActionOnSave": {
           "enable": true
@@ -109,9 +101,7 @@
       }
     },
     "lua-language-server": {
-      "binary": {
-        "path_lookup": true
-      },
+      "binary": {},
       "settings": {
         "Lua": {
           "codeLens": {
@@ -127,14 +117,10 @@
       }
     },
     "marksman": {
-      "binary": {
-        "path_lookup": true
-      }
+      "binary": {}
     },
     "nix": {
-      "binary": {
-        "path_lookup": true
-      },
+      "binary": {},
       "settings": {
         "nixd": {
           "formatting": {
@@ -144,14 +130,10 @@
       }
     },
     "tailwindcss-language-server": {
-      "binary": {
-        "path_lookup": true
-      }
+      "binary": {}
     },
     "typescript-language-server": {
-      "binary": {
-        "path_lookup": true
-      },
+      "binary": {},
       "initialization_options": {
         "preferences": {
           "includeInlayParameterNameHints": "all",
@@ -166,9 +148,7 @@
       }
     },
     "vtsls": {
-      "binary": {
-        "path_lookup": true
-      },
+      "binary": {},
       "settings": {
         "javascript": {
           "inlayHints": {
@@ -225,19 +205,13 @@
       }
     },
     "vscode-css-language-server": {
-      "binary": {
-        "path_lookup": true
-      }
+      "binary": {}
     },
     "vscode-html-language-server": {
-      "binary": {
-        "path_lookup": true
-      }
+      "binary": {}
     },
     "yaml-language-server": {
-      "binary": {
-        "path_lookup": true
-      },
+      "binary": {},
       "settings": {
         "yaml": {
           "format": {
@@ -270,18 +244,6 @@
     },
     "JavaScript": {
       "language_servers": ["vtsls", "eslint", "cspell", "..."],
-      "code_actions_on_format": {
-        "source.fixAll.eslint": true
-      }
-    },
-    "JSX": {
-      "language_servers": [
-        "vtsls",
-        "eslint",
-        "tailwindcss-language-server",
-        "cspell",
-        "..."
-      ],
       "code_actions_on_format": {
         "source.fixAll.eslint": true
       }
