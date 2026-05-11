@@ -46,6 +46,8 @@
       "space h p": "editor::ToggleSelectedDiffHunks",
       "space h s": "git::ToggleStaged",
       "space h r": "git::Restore",
+      "space b": "git::Blame",
+      "space B": "git::FileHistory",
       "space ?": "file_finder::Toggle",
       "space y": ["workspace::SendKeystrokes", "\" + y"],
       "space Y": ["workspace::SendKeystrokes", "\" + y g _"],
