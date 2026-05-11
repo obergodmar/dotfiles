@@ -3,6 +3,7 @@
     "context": "Workspace || Editor",
     "bindings": {
       "ctrl-\\": "terminal_panel::Toggle",
+      "ctrl-f": "workspace::ToggleZoom",
     },
   },
   {
@@ -16,9 +17,8 @@
       "alt-down": "vim::ResizePaneDown",
       "alt-up": "vim::ResizePaneUp",
       "alt-right": "vim::ResizePaneRight",
-      "ctrl-f": "workspace::ToggleZoom",
       "space tab": "workspace::ToggleLeftDock",
-      "space delete": "workspace::ToggleRightDock",
+      "space backspace": "workspace::ToggleRightDock",
     },
   },
   {
