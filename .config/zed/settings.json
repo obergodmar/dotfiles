@@ -1,34 +1,46 @@
 {
+  "cli_default_open_behavior": "existing_window",
   "agent_servers": {
     "claude-acp": {
-      "type": "registry"
+      "type": "custom",
+      "command": "claude-agent-acp",
+      "args": [],
+      "env": {
+        "CLAUDE_CODE_EXECUTABLE": "claude",
+      },
     },
     "codex-acp": {
-      "type": "registry"
-    }
+      "type": "custom",
+      "command": "codex-acp",
+      "args": [],
+      "env": {},
+    },
   },
   "project_panel": {
-    "dock": "left"
+    "dock": "left",
   },
   "outline_panel": {
-    "dock": "left"
+    "dock": "left",
   },
   "collaboration_panel": {
-    "dock": "left"
+    "dock": null,
+    "button": false,
   },
   "agent": {
     "dock": "right",
     "favorite_models": [],
-    "model_parameters": []
+    "model_parameters": [],
   },
   "git_panel": {
-    "dock": "left"
-  },
-  "features": {
-    "edit_prediction_provider": "copilot",
+    "dock": "left",
+    "file_icons": true,
+    "diff_stats": true,
+    "folder_icons": true,
+    "show_count_badge": true,
   },
   "edit_predictions": {
-    "disabled_globs": [],
+    "provider": "copilot",
+    "disabled_globs": ["**/.env", "**/.env.*"],
   },
   "auto_update": false,
   "base_keymap": "VSCode",
@@ -47,24 +59,44 @@
   "relative_line_numbers": "enabled",
   "remove_trailing_whitespace_on_save": true,
   "ensure_final_newline_on_save": true,
-  "format_on_save": "on",
+  "format_on_save": "off",
   "soft_wrap": "none",
   "minimap": {
     "show": "never",
   },
-  "ui_font_size": 16.5,
+  "ui_font_size": 15.5,
   "ui_font_features": {
     "lida": true,
     "calt": true,
   },
-  "buffer_font_size": 14,
+  "status_bar": {
+    "active_encoding_button": "enabled",
+    "active_language_button": true,
+    "cursor_position_button": true,
+    "line_endings_button": true,
+    "show_active_file": true,
+  },
+  "buffer_font_size": 14.5,
+  "agent_buffer_font_size": 14.5,
   "buffer_font_family": "Iosevka Nerd Font",
   "buffer_font_weight": 450,
   "buffer_line_height": "standard",
+  "auto_signature_help": true,
+  "title_bar": {
+    "show_branch_status_icon": true,
+    "show_menus": false,
+    "show_user_picture": false,
+    "show_user_menu": false,
+    "show_onboarding_banner": false,
+    "show_sign_in": false,
+  },
+  "which_key": {
+    "enabled": true,
+  },
   "theme": {
     "mode": "dark",
     "light": "Catppuccin Latte",
-    "dark": "Catppuccin Macchiato (lavender)",
+    "dark": "Catppuccin Macchiato",
   },
   "icon_theme": {
     "mode": "dark",
@@ -74,12 +106,9 @@
   "auto_install_extensions": {
     "catppuccin": true,
     "catppuccin-icons": true,
-    "cspell": true,
-    "html": true,
-    "lua": true,
-    "markdown-oxide": true,
-    "marksman": true,
     "nix": true,
+    "lua": true,
+    "harper": true,
   },
   "inlay_hints": {
     "enabled": true,
@@ -105,233 +134,6 @@
     "working_directory": "current_project_directory",
   },
   "node": {},
-  "lsp": {
-    "bash-language-server": {
-      "binary": {},
-    },
-    "cspell": {
-      "settings": {
-        "cSpell": {
-          "language": "en,ru",
-          "globalSettings": true,
-        },
-      },
-    },
-    "eslint": {
-      "binary": {},
-      "settings": {
-        "codeActionOnSave": {
-          "enable": true,
-        },
-        "problems": {
-          "shortenToSingleLine": true,
-        },
-        "workingDirectory": {
-          "mode": "auto",
-        },
-      },
-    },
-    "lua-language-server": {
-      "binary": {},
-      "settings": {
-        "Lua": {
-          "codeLens": {
-            "enable": true,
-          },
-          "hint": {
-            "enable": true,
-          },
-          "workspace": {
-            "checkThirdParty": "Disable",
-          },
-        },
-      },
-    },
-    "marksman": {
-      "binary": {},
-    },
-    "nix": {
-      "binary": {},
-      "settings": {
-        "nixd": {
-          "formatting": {
-            "command": ["nixfmt"],
-          },
-        },
-      },
-    },
-    "tailwindcss-language-server": {
-      "binary": {},
-    },
-    "typescript-language-server": {
-      "binary": {},
-      "initialization_options": {
-        "preferences": {
-          "includeInlayParameterNameHints": "all",
-          "includeInlayParameterNameHintsWhenArgumentMatchesName": true,
-          "includeInlayFunctionParameterTypeHints": false,
-          "includeInlayVariableTypeHints": false,
-          "includeInlayVariableTypeHintsWhenTypeMatchesName": false,
-          "includeInlayPropertyDeclarationTypeHints": false,
-          "includeInlayFunctionLikeReturnTypeHints": false,
-          "includeInlayEnumMemberValueHints": false,
-        },
-      },
-    },
-    "vtsls": {
-      "binary": {},
-      "settings": {
-        "javascript": {
-          "inlayHints": {
-            "parameterNames": {
-              "enabled": "all",
-              "suppressWhenArgumentMatchesName": true,
-            },
-            "parameterTypes": {
-              "enabled": false,
-            },
-            "variableTypes": {
-              "enabled": false,
-            },
-            "propertyDeclarationTypes": {
-              "enabled": false,
-            },
-            "functionLikeReturnTypes": {
-              "enabled": false,
-            },
-            "enumMemberValues": {
-              "enabled": false,
-            },
-          },
-          "tsserver": {
-            "maxTsServerMemory": 4096,
-          },
-        },
-        "typescript": {
-          "inlayHints": {
-            "parameterNames": {
-              "enabled": "all",
-              "suppressWhenArgumentMatchesName": true,
-            },
-            "parameterTypes": {
-              "enabled": false,
-            },
-            "variableTypes": {
-              "enabled": false,
-            },
-            "propertyDeclarationTypes": {
-              "enabled": false,
-            },
-            "functionLikeReturnTypes": {
-              "enabled": false,
-            },
-            "enumMemberValues": {
-              "enabled": false,
-            },
-          },
-          "tsserver": {
-            "maxTsServerMemory": 4096,
-          },
-        },
-      },
-    },
-    "vscode-css-language-server": {
-      "binary": {},
-    },
-    "vscode-html-language-server": {
-      "binary": {},
-    },
-    "yaml-language-server": {
-      "binary": {},
-      "settings": {
-        "yaml": {
-          "format": {
-            "singleQuote": false,
-          },
-          "schemaStore": {
-            "enable": true,
-          },
-          "validate": true,
-        },
-      },
-    },
-  },
-  "languages": {
-    "CSS": {
-      "language_servers": [
-        "vscode-css-language-server",
-        "tailwindcss-language-server",
-        "cspell",
-        "...",
-      ],
-    },
-    "HTML": {
-      "language_servers": [
-        "vscode-html-language-server",
-        "tailwindcss-language-server",
-        "cspell",
-        "...",
-      ],
-    },
-    "JavaScript": {
-      "language_servers": ["vtsls", "eslint", "cspell", "..."],
-      "code_actions_on_format": {
-        "source.fixAll.eslint": true,
-      },
-    },
-    "Lua": {
-      "language_servers": ["lua-language-server", "cspell", "..."],
-      "formatter": "language_server",
-      "inlay_hints": {
-        "enabled": true,
-        "show_parameter_hints": true,
-        "show_type_hints": true,
-        "show_other_hints": true,
-      },
-    },
-    "Markdown": {
-      "language_servers": ["marksman", "markdown-oxide", "cspell", "..."],
-      "format_on_save": "on",
-    },
-    "Nix": {
-      "language_servers": ["nix", "cspell", "..."],
-      "formatter": {
-        "external": {
-          "command": "nixfmt",
-          "arguments": ["--filename", "{buffer_path}"],
-        },
-      },
-    },
-    "Shell Script": {
-      "language_servers": ["bash-language-server", "cspell", "..."],
-      "formatter": {
-        "external": {
-          "command": "shfmt",
-          "arguments": ["--filename", "{buffer_path}", "--indent", "2"],
-        },
-      },
-    },
-    "TSX": {
-      "language_servers": [
-        "vtsls",
-        "eslint",
-        "tailwindcss-language-server",
-        "cspell",
-        "...",
-      ],
-      "code_actions_on_format": {
-        "source.fixAll.eslint": true,
-      },
-    },
-    "TypeScript": {
-      "language_servers": ["vtsls", "eslint", "cspell", "..."],
-      "code_actions_on_format": {
-        "source.fixAll.eslint": true,
-      },
-    },
-    "YAML": {
-      "language_servers": ["yaml-language-server", "cspell", "..."],
-      "formatter": "language_server",
-    },
-  },
+  "lsp": {},
+  "languages": {},
 }

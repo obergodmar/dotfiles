@@ -1,16 +1,12 @@
 [
   {
-    "context": "Workspace",
+    "context": "Workspace || Editor",
     "bindings": {
-      "ctrl-\\": "workspace::NewTerminal",
-      "ctrl-f": "project_panel::ToggleFocus",
-      "ctrl-?": "agent::ToggleFocus",
-      "ctrl-alt-c": ["agent::NewExternalAgentThread", { "agent": { "custom": { "name": "codex-acp" } } }],
-      "ctrl-alt-a": ["agent::NewExternalAgentThread", { "agent": { "custom": { "name": "claude-acp" } } }]
-    }
+      "ctrl-\\": "terminal_panel::Toggle",
+    },
   },
   {
-    "context": "Editor && mode == full && vim_mode == normal",
+    "context": "mode == full && vim_mode == normal",
     "bindings": {
       "ctrl-left": "workspace::ActivatePaneLeft",
       "ctrl-down": "workspace::ActivatePaneDown",
@@ -20,10 +16,17 @@
       "alt-down": "vim::ResizePaneDown",
       "alt-up": "vim::ResizePaneUp",
       "alt-right": "vim::ResizePaneRight",
+      "ctrl-f": "workspace::ToggleZoom",
+      "space tab": "workspace::ToggleLeftDock",
+    },
+  },
+  {
+    "context": "Editor && mode == full && vim_mode == normal",
+    "bindings": {
       "enter": ["workspace::SendKeystrokes", "*"],
       "space f": "editor::Format",
       "space F": "project_panel::ToggleFocus",
-      "space tab": "workspace::ToggleLeftDock",
+      "space e": "editor::Hover",
       "space c a": "editor::ToggleCodeActions",
       "space c r": "editor::Rename",
       "space c s": "command_palette::Toggle",
@@ -38,7 +41,10 @@
       "space s f": "file_finder::Toggle",
       "space s G": "pane::DeploySearch",
       "space s d": "diagnostics::Deploy",
-      "space s s": "workspace::ToggleLeftDock",
+      "space s s": "git_panel::Toggle",
+      "space h p": "editor::ToggleSelectedDiffHunks",
+      "space h s": "git::ToggleStaged",
+      "space h r": "git::Restore",
       "space ?": "file_finder::Toggle",
       "space y": ["workspace::SendKeystrokes", "\" + y"],
       "space Y": ["workspace::SendKeystrokes", "\" + y g _"],
@@ -53,15 +59,16 @@
       "[ c": "editor::GoToPreviousHunk",
       "] c": "editor::GoToHunk",
       "g r": "editor::FindAllReferences",
-      "K": "editor::Hover"
-    }
+      "K": "editor::Hover",
+    },
   },
   {
     "context": "Editor && vim_mode == insert",
     "bindings": {
       "ctrl-z": "editor::ShowCompletions",
-      "escape": ["workspace::SendKeystrokes", "escape : nohl enter"]
-    }
+      "escape": ["workspace::SendKeystrokes", "escape : nohl enter"],
+      "shift-tab": "editor::AcceptEditPrediction",
+    },
   },
   {
     "context": "Editor && vim_mode == visual",
@@ -71,7 +78,13 @@
       "space y": ["workspace::SendKeystrokes", "\" + y"],
       "space p": ["workspace::SendKeystrokes", "\" + p"],
       "space P": ["workspace::SendKeystrokes", "\" + P"],
-      "space h s": "git::ToggleStaged"
-    }
-  }
+      "space h s": "git::ToggleStaged",
+    },
+  },
+  {
+    "context": "VimControl && !menu",
+    "unbind": {
+      "g space": "editor::OpenExcerpts",
+    },
+  },
 ]
