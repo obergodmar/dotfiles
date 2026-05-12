@@ -91,4 +91,10 @@
       "g space": "editor::OpenExcerpts",
     },
   },
+  {
+    "context": "Editor && vim_mode == visual && !VimWaiting && !VimObject",
+    "bindings": {
+      "shift-s": "vim::PushAddSurrounds",
+    },
+  },
 ]
