@@ -4,7 +4,9 @@
   "editor.semanticTokenColorCustomizations": {
     "[Catppuccin Macchiato]": {
       "rules": {
-        "variable.readonly.local": "#f5a97f"
+        "variable.readonly.local": "#f5a97f",
+        "property": "#b7bdf8",
+        "property.declaration": "#b7bdf8"
       }
     }
   },
@@ -51,7 +53,7 @@
   "editor.fontLigatures": true,
   "editor.fontFamily": "Iosevka Nerd Font",
   "editor.fontWeight": 450,
-  "editor.fontSize": 14,
+  "editor.fontSize": 15,
   "editor.lineHeight": 1.25,
   "editor.lineNumbers": "relative",
   "editor.renderLineHighlight": "all",
