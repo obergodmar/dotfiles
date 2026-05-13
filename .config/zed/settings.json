@@ -125,6 +125,16 @@
         "token_type": "parameter",
         "foreground_color": "#ee99a0",
       },
+      {
+        "token_type": "function",
+        "token_modifiers": ["defaultLibrary"],
+        "style": ["function"],
+      },
+      {
+        "token_type": "method",
+        "token_modifiers": ["defaultLibrary"],
+        "style": ["function"],
+      },
     ],
   },
   "icon_theme": {
