@@ -98,6 +98,35 @@
     "light": "Catppuccin Latte",
     "dark": "Catppuccin Macchiato",
   },
+  "theme_overrides": {
+    "Catppuccin Macchiato": {
+      "syntax": {
+        "property": {
+          "color": "#b7bdf8",
+        },
+        "attribute.jsx": {
+          "color": "#eed49f",
+        },
+        "tag.component.jsx": {
+          "color": "#f5bde6",
+        },
+      },
+    },
+  },
+  "semantic_tokens": "combined",
+  "global_lsp_settings": {
+    "semantic_token_rules": [
+      {
+        "token_type": "variable",
+        "token_modifiers": ["readonly", "local"],
+        "foreground_color": "#f5a97f",
+      },
+      {
+        "token_type": "parameter",
+        "foreground_color": "#ee99a0",
+      },
+    ],
+  },
   "icon_theme": {
     "mode": "dark",
     "light": "Catppuccin Latte",
