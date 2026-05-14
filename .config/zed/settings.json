@@ -135,6 +135,14 @@
         "token_modifiers": ["defaultLibrary"],
         "style": ["function"],
       },
+      {
+        "token_type": "enum",
+        "style": ["type"],
+      },
+      {
+        "token_type": "enumMember",
+        "foreground_color": "#8bd5ca",
+      },
     ],
   },
   "icon_theme": {
