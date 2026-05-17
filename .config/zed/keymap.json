@@ -49,6 +49,7 @@
       "space h s": "git::ToggleStaged",
       "space h S": "git::StageAll",
       "space h r": "git::Restore",
+      "space h R": "git::RestoreFile",
       "space h d": "git::Diff",
       "space b": "git::Blame",
       "space B": "git::FileHistory",
