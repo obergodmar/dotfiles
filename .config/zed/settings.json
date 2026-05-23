@@ -32,12 +32,14 @@
     "model_parameters": [],
   },
   "git_panel": {
+    "tree_view": false,
     "dock": "left",
     "file_icons": true,
     "diff_stats": true,
     "folder_icons": true,
     "show_count_badge": true,
   },
+  "diff_view_style": "split",
   "edit_predictions": {
     "provider": "copilot",
     "disabled_globs": ["**/.env", "**/.env.*"],
