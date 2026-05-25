@@ -43,6 +43,7 @@
   "edit_predictions": {
     "provider": "copilot",
     "disabled_globs": ["**/.env", "**/.env.*"],
+    "allow_data_collection": "no",
   },
   "auto_update": false,
   "base_keymap": "VSCode",
@@ -182,7 +183,10 @@
     "shell": "system",
     "working_directory": "current_project_directory",
   },
-  "node": {},
+  "node": {
+    "path": "node",
+    "npm_path": "npm",
+  },
   "lsp": {},
   "languages": {},
 }
