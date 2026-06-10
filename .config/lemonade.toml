@@ -1,4 +1,4 @@
 port = 2489
 line-ending = 'lf'
 no-fallback-messages = true
-log-level=0
+log-level=1
