@@ -1,0 +1,19 @@
+{
+  "providers": {
+    "mlx": {
+      "baseUrl": "http://127.0.0.1:8080/v1",
+      "api": "openai-completions",
+      "apiKey": "mlx",
+      "compat": {
+        "supportsDeveloperRole": false,
+        "supportsReasoningEffort": false
+      },
+      "models": [
+        {
+          "id": "mlx-community/Qwen3-Coder-30B-A3B-Instruct-4bit",
+          "name": "Qwen3 Coder MLX"
+        }
+      ]
+    }
+  }
+}
