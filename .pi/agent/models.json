@@ -10,8 +10,13 @@
       },
       "models": [
         {
-          "id": "mlx-community/Qwen3-Coder-30B-A3B-Instruct-4bit",
-          "name": "Qwen3 Coder MLX"
+          "id": "mlx-community/Qwen3.6-35B-A3B-4bit",
+          "name": "Qwen3.6 Coder MLX",
+          "reasoning": true,
+          "input": ["text"],
+          "contextWindow": 131072,
+          "maxTokens": 8192,
+          "cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 }
         }
       ]
     }
