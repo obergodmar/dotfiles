@@ -198,6 +198,8 @@
   "chat.viewSessions.orientation": "stacked",
   //   "http.proxy": "http://localhost:12334",
 
+  "remote.SSH.useExecServer": false,
+
   "gitlens.cloudIntegrations.enabled": false,
   "gitlens.cloudPatches.enabled": false,
   "gitlens.integrations.enabled": false,
