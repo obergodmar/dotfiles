@@ -1,4 +1,5 @@
 {
+  "ssh_connections": [],
   "cli_default_open_behavior": "existing_window",
   "agent_servers": {
     "claude-acp": {
@@ -115,6 +116,19 @@
         },
       },
     },
+    "Catppuccin Latte": {
+      "syntax": {
+        "property": {
+          "color": "#7287fd",
+        },
+        "attribute.jsx": {
+          "color": "#df8e1d",
+        },
+        "tag.component.jsx": {
+          "color": "#ea76cb",
+        },
+      },
+    },
   },
   "semantic_tokens": "combined",
   "global_lsp_settings": {
@@ -122,11 +136,11 @@
       {
         "token_type": "variable",
         "token_modifiers": ["readonly", "local"],
-        "foreground_color": "#f5a97f",
+        "style": ["constant"],
       },
       {
         "token_type": "parameter",
-        "foreground_color": "#ee99a0",
+        "style": ["variable.parameter", "parameter"],
       },
       {
         "token_type": "function",
@@ -144,7 +158,8 @@
       },
       {
         "token_type": "enumMember",
-        "foreground_color": "#8bd5ca",
+        "style": ["enum"],
+        "font_weight": "normal",
       },
     ],
   },

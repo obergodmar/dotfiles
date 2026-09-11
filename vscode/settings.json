@@ -8,6 +8,13 @@
         "property": "#b7bdf8",
         "property.declaration": "#b7bdf8"
       }
+    },
+    "[Catppuccin Latte]": {
+      "rules": {
+        "variable.readonly.local": "#fe640b",
+        "property": "#7287fd",
+        "property.declaration": "#7287fd"
+      }
     }
   },
   "editor.tokenColorCustomizations": {
@@ -41,6 +48,40 @@
           "scope": ["variable.language.super.ts"],
           "settings": {
             "foreground": "#ed8796"
+          }
+        }
+      ]
+    },
+    "[Catppuccin Latte]": {
+      "textMateRules": [
+        {
+          "scope": ["support.type.primitive"],
+          "settings": {
+            "foreground": "#df8e1d"
+          }
+        },
+        {
+          "scope": ["support.type.builtin.tsx"],
+          "settings": {
+            "foreground": "#fe640b"
+          }
+        },
+        {
+          "scope": ["support.type.primitive"],
+          "settings": {
+            "foreground": "#8839ef"
+          }
+        },
+        {
+          "scope": ["variable.other.property.ts"],
+          "settings": {
+            "foreground": "#7287fd"
+          }
+        },
+        {
+          "scope": ["variable.language.super.ts"],
+          "settings": {
+            "foreground": "#d20f39"
           }
         }
       ]
@@ -148,12 +189,22 @@
   "workbench.fontAliasing": "default",
   "workbench.colorTheme": "Catppuccin Macchiato",
   "workbench.colorCustomizations": {
-    "editorCursor.background": "#1F1F28",
-    "editorCursor.foreground": "#DCD8BA",
-    "statusBar.background": "#2A2A37",
-    "statusBarItem.remoteBackground": "#938AA9",
-    "statusBarItem.remoteForeground": "#1F1F28",
-    "statusBarItem.remoteHoverBackground": "#957FB8"
+    "[Catppuccin Macchiato]": {
+      "editorCursor.background": "#1F1F28",
+      "editorCursor.foreground": "#DCD8BA",
+      "statusBar.background": "#2A2A37",
+      "statusBarItem.remoteBackground": "#938AA9",
+      "statusBarItem.remoteForeground": "#1F1F28",
+      "statusBarItem.remoteHoverBackground": "#957FB8"
+    },
+    "[Catppuccin Latte]": {
+      "editorCursor.background": "#dce0e8",
+      "editorCursor.foreground": "#4c4f69",
+      "statusBar.background": "#e6e9ef",
+      "statusBarItem.remoteBackground": "#7287fd",
+      "statusBarItem.remoteForeground": "#dce0e8",
+      "statusBarItem.remoteHoverBackground": "#8839ef"
+    }
   },
   // #endregion workbench
 

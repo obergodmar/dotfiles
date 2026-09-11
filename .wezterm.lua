@@ -12,6 +12,18 @@ local is_windows = target_triple == "x86_64-pc-windows-msvc"
 local is_macos = target_triple == "x86_64-apple-darwin" or target_triple == "aarch64-apple-darwin"
 local is_linux = target_triple == "x86_64-unknown-linux-gnu"
 
+local function catppuccin_flavor()
+  local file = io.open(wezterm.home_dir .. "/.config/catppuccin/flavor", "r")
+  if not file then
+    return "Macchiato"
+  end
+
+  local flavor = file:read("*l")
+  file:close()
+
+  return flavor:gsub("^%l", string.upper)
+end
+
 c.term = "xterm-256color"
 c.front_end = "WebGpu"
 c.max_fps = 255
@@ -30,7 +42,7 @@ c.visual_bell = {
   target = "CursorColor",
 }
 
-c.color_scheme = "Catppuccin Macchiato"
+c.color_scheme = "Catppuccin " .. catppuccin_flavor()
 c.hide_mouse_cursor_when_typing = false
 
 c.window_padding = {
