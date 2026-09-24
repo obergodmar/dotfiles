@@ -10,8 +10,8 @@
       },
       "models": [
         {
-          "id": "mlx-community/Qwen3.6-35B-A3B-4bit",
-          "name": "Qwen3.6 Coder MLX",
+          "id": "mlx-community/Qwen3.8-27B-4bit",
+          "name": "Qwen3.8 27B MLX (4-bit)",
           "reasoning": true,
           "input": ["text"],
           "contextWindow": 131072,
